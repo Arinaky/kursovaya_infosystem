@@ -2,10 +2,10 @@
 <!DOCTYPE html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Калькулятор - объём конуса</title>
+	<title>Курсовая</title>
 </head>
 <body>
-	<h1>Калькулятор = объем конуса</h1>
+	<h1>Курсовая</h1>
 	<h2><em>Разработано DreamTeam</em></h2>
 	<form action="${pageContext.request.contextPath}/Calc" method="post">
 		<label for="radius">Радиус: </label>
