@@ -49,10 +49,10 @@
 			</div>
 
 			<div class="clean-details">
-				<input type="radio" name="clean" id="dot-1">
-				<input type="radio" name="clean" id="dot-2">
-				<input type="radio" name="clean" id="dot-3">
-				<input type="radio" name="clean" id="dot-4">
+				<input type="radio" name="clean" id="dot-1" value="Генеральная">
+				<input type="radio" name="clean" id="dot-2" value="Облегченная">
+				<input type="radio" name="clean" id="dot-3" value="После ремонта">
+				<input type="radio" name="clean" id="dot-4" value="Послестроительная">
 				<input type="radio" name="clean2" id="m-1">
 				<input type="radio" name="clean2" id="m-2">
 				<input type="radio" name="clean2" id="m-3">

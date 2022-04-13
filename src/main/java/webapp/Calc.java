@@ -22,17 +22,19 @@ public class Calc extends HttpServlet {
 		private String surname_calc;
 		private String name_calc;
 		private String patronymic_calc;
-
+		private String clean_calc;
 		private String address_calc;
 		private String data_time_calc;
 		private String result;
 
-		public RequestCalc(String surname, String name, String patronymic, String address, String data_time) {
+
+		public RequestCalc(String surname, String name, String patronymic, String address, String data_time, String clean) {
 			this.surname_calc = surname;
 			this.name_calc = name;
 			this.patronymic_calc = patronymic;
 			this.address_calc = address;
 			this.data_time_calc = data_time;
+			this.clean_calc = clean;
 		}
 		
 		public static RequestCalc fromRequestParameters(HttpServletRequest request) {
@@ -41,7 +43,8 @@ public class Calc extends HttpServlet {
 					request.getParameter("name"),
 					request.getParameter("patronymic"),
 					request.getParameter("address"),
-					request.getParameter("data_time"));
+					request.getParameter("data_time"),
+					request.getParameter("clean"));
 		}
 		
 		public void setAsRequestAttributesAndCalculate(HttpServletRequest request) {
@@ -50,12 +53,13 @@ public class Calc extends HttpServlet {
 			request.setAttribute("patronymic", patronymic_calc);
 			request.setAttribute("address", address_calc);
 			request.setAttribute("data_time", data_time_calc);
+			request.setAttribute("clean", clean_calc);
 
 			if (surname_calc == null) {
 				result = "Не работает";
 				request.setAttribute("result", result);
 			} else {
-				result = surname_calc + name_calc + patronymic_calc + address_calc + data_time_calc;
+				result = surname_calc + " " + name_calc + " " + patronymic_calc + " " + address_calc + " " + data_time_calc + " " + clean_calc;
 				request.setAttribute("result", result);
 			}
 		}
