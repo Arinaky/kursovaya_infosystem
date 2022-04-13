@@ -14,22 +14,22 @@
 
 				<div class="input-box">
 					<span for="surname" class="details">Фамилия</span>
-					<input type="text" placeholder="Ваша фамилия" required id="surname" value="${surname}">
+					<input type="text" placeholder="Ваша фамилия" required name="surname" id="surname" value="${surname}">
 				</div>
 
 				<div class="input-box">
 					<span class="details">Имя</span>
-					<input type="text" placeholder="Ваше имя" required id="name" value="${name}">
+					<input type="text" placeholder="Ваше имя" required name="name" id="name" value="${name}">
 				</div>
 
 				<div class="input-box">
 					<span class="details">Отчество</span>
-					<input type="text" placeholder="Отчество" required id="patronymic" value="${patronymic}">
+					<input type="text" placeholder="Отчество" required name="patronymic" id="patronymic" value="${patronymic}">
 				</div>
 
 				<div class="input-box">
 					<span class="details">Адрес</span>
-					<input type="text" placeholder="Адрес" required id="address" value="${address}">
+					<input type="text" placeholder="Адрес" required name="address" id="address" value="${address}">
 				</div>
 
 				<div class="input-box">
@@ -39,9 +39,11 @@
 
 				<div class="input-box">
 					<span class="details">Дата и время</span>
-					<input type="datetime-local"  id="data_time" value="${data_time}">
+					<input type="datetime-local"  name="data_time" id="data_time" value="${data_time}">
 				</div>
 
+				<div class="input-box">
+				<button class="but-det">Ввести промокод</button>
 			</div>
 
 			</div>
