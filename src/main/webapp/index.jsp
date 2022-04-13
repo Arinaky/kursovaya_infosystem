@@ -13,7 +13,7 @@
 			<div class="user-details">
 
 				<div class="input-box">
-					<span class="details">Фамилия</span>
+					<label for="surname" class="details">Фамилия</label>
 					<input type="text" placeholder="Ваша фамилия" required id="surname" value="${surname}">
 				</div>
 
