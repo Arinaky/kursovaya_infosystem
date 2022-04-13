@@ -58,22 +58,22 @@
 			    </div>
 
 			    <div class="clean-details">
-				    <input type="radio" name="clean_type" id="dot-1">
-				    <input type="radio" name="clean_type" id="dot-2">
-		    		<input type="radio" name="clean_type" id="dot-3">
-		    		<input type="radio" name="clean_type" id="dot-4">
+				    <input type="radio" name="clean_type" id="clean_type_1" value="Генеральная">
+				    <input type="radio" name="clean_type" id="clean_type_2" value="Облегченная">
+		    		<input type="radio" name="clean_type" id="clean_type_3" value="После ремонта">
+		    		<input type="radio" name="clean_type" id="clean_type_4" value="Послестроительная">
 			    	<input type="radio" name="clean2" id="m-1">
 				    <input type="radio" name="clean2" id="m-2">
     				<input type="radio" name="clean2" id="m-3">
 	    			<input type="radio" name="clean2" id="m-4">
-		    		<input type="checkbox" name="clean_service_1" id="clean_service_1" value=${clean_service_1}>
-			    	<input type="checkbox" name="clean_service_2" id="clean_service_2" value=${clean_service_2}>
-				    <input type="checkbox" name="clean_service_3" id="clean_service_3" value=${clean_service_3}>
-    				<input type="checkbox" name="clean_service_4" id="clean_service_4" value=${clean_service_4}>
-	    			<input type="checkbox" name="clean_service_5" id="clean_service_5" value=${clean_service_5}>
-		    		<input type="checkbox" name="clean_service_6" id="clean_service_6" value=${clean_service_6}>
-			    	<input type="checkbox" name="clean_service_7" id="clean_service_7" value=${clean_service_7}>
-				    <input type="checkbox" name="clean_service_8" id="clean_service_8" value=${clean_service_8}>
+		    		<input type="checkbox" name="clean_service_1" id="clean_service_1" value="Полировка полов">
+			    	<input type="checkbox" name="clean_service_2" id="clean_service_2" value="Мытье посуды">
+				    <input type="checkbox" name="clean_service_3" id="clean_service_3" value="Стирка+глажка">
+    				<input type="checkbox" name="clean_service_4" id="clean_service_4" value="Мытье окон">
+	    			<input type="checkbox" name="clean_service_5" id="clean_service_5" value="Уборка стен">
+		    		<input type="checkbox" name="clean_service_6" id="clean_service_6" value="Чистка унитаза">
+			    	<input type="checkbox" name="clean_service_7" id="clean_service_7" value="Чистка раковин">
+				    <input type="checkbox" name="clean_service_8" id="clean_service_8" value="Уборка балкона">
 
 				    <span class="clean-title">Вид уборки</span>
 				    <div class="category">

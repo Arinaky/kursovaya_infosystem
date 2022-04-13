@@ -28,6 +28,13 @@ public class Calc extends HttpServlet {
 		private String clean_area_calc;
 		private String clean_type_calc;
 		private String clean_service_1_calc;
+		private String clean_service_2_calc;
+		private String clean_service_3_calc;
+		private String clean_service_4_calc;
+		private String clean_service_5_calc;
+		private String clean_service_6_calc;
+		private String clean_service_7_calc;
+		private String clean_service_8_calc;
 		private String result;
 
 
@@ -40,6 +47,13 @@ public class Calc extends HttpServlet {
 			this.clean_area_calc = clean_area;
 			this.clean_type_calc = clean_type;
 			this.clean_service_1_calc = clean_service_1;
+			this.clean_service_2_calc = clean_service_2;
+			this.clean_service_3_calc = clean_service_3;
+			this.clean_service_4_calc = clean_service_4;
+			this.clean_service_5_calc = clean_service_5;
+			this.clean_service_6_calc = clean_service_6;
+			this.clean_service_7_calc = clean_service_7;
+			this.clean_service_8_calc = clean_service_8;
 		}
 
 		public static RequestCalc fromRequestParameters(HttpServletRequest request) {
@@ -70,6 +84,13 @@ public class Calc extends HttpServlet {
 			request.setAttribute("clean_area", clean_area_calc);
 			request.setAttribute("clean_type", clean_type_calc);
 			request.setAttribute("clean_service_1", clean_service_1_calc);
+			request.setAttribute("clean_service_2", clean_service_2_calc);
+			request.setAttribute("clean_service_3", clean_service_3_calc);
+			request.setAttribute("clean_service_4", clean_service_4_calc);
+			request.setAttribute("clean_service_5", clean_service_5_calc);
+			request.setAttribute("clean_service_6", clean_service_6_calc);
+			request.setAttribute("clean_service_7", clean_service_7_calc);
+			request.setAttribute("clean_service_8", clean_service_8_calc);
 
 			result = clean_service_1_calc;
 			request.setAttribute("result", result);
