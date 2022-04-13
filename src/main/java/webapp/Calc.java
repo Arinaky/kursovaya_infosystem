@@ -45,7 +45,7 @@ public class Calc extends HttpServlet {
 		}
 		
 		public void setAsRequestAttributesAndCalculate(HttpServletRequest request) {
-
+			surname_calc = request.getParameter("surname");
 			request.setAttribute("surname", surname_calc);
 			request.setAttribute("name", name_calc);
 			request.setAttribute("patronymic", patronymic_calc);
