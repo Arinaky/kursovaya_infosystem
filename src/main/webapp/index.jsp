@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div class="container">
-		<div class="title">Калькулятор</div>
+		<div class="title">Калькулятор клининговых услуг</div>
 		<form action="#">
 			<div class="user-details">
 
