@@ -26,7 +26,7 @@ public class CleanPrices {
         clean_type_prices.put("После ремонта", 10000);
         clean_type_prices.put("Послестроительная", 20000);
 
-        clean_services_prices.put("Полировка полов", areaRatio*200);
+        clean_services_prices.put("Полировка полов", areaRatio*50);
         clean_services_prices.put("Мытье посуды", 500);
         clean_services_prices.put("Стирка+глажка", 500);
         clean_services_prices.put("Мытье окон", 500);

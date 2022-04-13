@@ -15,12 +15,13 @@ public class Calc extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
-		
+
 		request.getRequestDispatcher("/result.jsp").forward(request, response);
 	}
-	
+
 	private static class RequestCalc {
 		private final Order order;
+		private String clean_services;
 		private String result;
 
 
@@ -46,7 +47,7 @@ public class Calc extends HttpServlet {
 					request.getParameter("clean_service_7"),
 					request.getParameter("clean_service_8")	);
 		}
-		
+
 		public void setAsRequestAttributesAndCalculate(HttpServletRequest request) {
 			request.setAttribute("surname", order.getSurname_calc());
 			request.setAttribute("name", order.getName_calc());
@@ -66,6 +67,16 @@ public class Calc extends HttpServlet {
 
 			order.Calculate();
 
+			if (order.getClean_service_1_calc() != null) {clean_services = clean_services + order.getClean_service_1_calc() + "\n";}
+			if (order.getClean_service_2_calc() != null) {clean_services = clean_services + order.getClean_service_2_calc() + "\n";}
+			if (order.getClean_service_3_calc() != null) {clean_services = clean_services + order.getClean_service_3_calc() + "\n";}
+			if (order.getClean_service_4_calc() != null) {clean_services = clean_services + order.getClean_service_4_calc() + "\n";}
+			if (order.getClean_service_5_calc() != null) {clean_services = clean_services + order.getClean_service_5_calc() + "\n";}
+			if (order.getClean_service_6_calc() != null) {clean_services = clean_services + order.getClean_service_6_calc() + "\n";}
+			if (order.getClean_service_7_calc() != null) {clean_services = clean_services + order.getClean_service_7_calc() + "\n";}
+			if (order.getClean_service_8_calc() != null) {clean_services = clean_services + order.getClean_service_8_calc() + "\n";}
+
+			request.setAttribute("clean_services", clean_services);
 			request.setAttribute("result", order.getPrice());
 		}
 	}
