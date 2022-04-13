@@ -10,12 +10,12 @@
 		<form class="form" action="${pageContext.request.contextPath}/Auth" method="post">
 			<h1 class="form_title">Авторизация</h1>
 			<div class="form_group">
-				<input class="form_input" placeholder="">
+				<input class="form_input" placeholder="" value="${username}">
 				<label class="form_label">Прекрасное имя</label>
 			</div>
 
 			<div class="form_group">
-				<input class="form_input"  placeholder="">
+				<input class="form_input"  placeholder="" value="${password}">
 				<label class="form_label">Надежный пароль</label>
 			</div>
 
