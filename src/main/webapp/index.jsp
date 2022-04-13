@@ -13,8 +13,8 @@
 			<div class="user-details">
 
 				<div class="input-box">
-					<label for="surname" class="details">Фамилия</label>
-					<input type="text" placeholder="Ваша фамилия" required id="surname" value="${surname}">
+					<span class="details">Фамилия</span>
+					<input type="text" id="surname" value="${surname}">
 				</div>
 
 				<div class="input-box">
@@ -29,12 +29,12 @@
 
 				<div class="input-box">
 					<span class="details">Адрес</span>
-					<input type="text" placeholder="Адрес" required id="address" value="${address}">
+					<input type="text" placeholder="Адрес" id="address" value="${address}">
 				</div>
 
 				<div class="input-box">
 					<span class="details">Промокод</span>
-					<input type="text" placeholder="Промокод" required>
+					<input type="text" placeholder="Промокод">
 				</div>
 
 				<div class="input-box">
