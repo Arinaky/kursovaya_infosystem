@@ -19,12 +19,12 @@ public class Calc extends HttpServlet {
 	}
 	
 	private static class RequestCalc {
-		private final String surname_calc;
-		private final String name_calc;
-		private final String patronymic_calc;
+		private String surname_calc;
+		private String name_calc;
+		private String patronymic_calc;
 
-		private final String address_calc;
-		private final String data_time_calc;
+		private String address_calc;
+		private String data_time_calc;
 		private String result;
 
 		public RequestCalc(String surname, String name, String patronymic, String address, String data_time) {
