@@ -20,40 +20,12 @@ public class Calc extends HttpServlet {
 	}
 	
 	private static class RequestCalc {
-		private String surname_calc;
-		private String name_calc;
-		private String patronymic_calc;
-		private String address_calc;
-		private String date_time_calc;
-		private String clean_area_calc;
-		private String clean_type_calc;
-		private String clean_service_1_calc;
-		private String clean_service_2_calc;
-		private String clean_service_3_calc;
-		private String clean_service_4_calc;
-		private String clean_service_5_calc;
-		private String clean_service_6_calc;
-		private String clean_service_7_calc;
-		private String clean_service_8_calc;
+		private final Order order;
 		private String result;
 
 
 		public RequestCalc(String surname, String name, String patronymic, String address, String date_time, String clean_area, String clean_type, String clean_service_1, String clean_service_2, String clean_service_3, String clean_service_4, String clean_service_5, String clean_service_6, String clean_service_7, String clean_service_8) {
-			this.surname_calc = surname;
-			this.name_calc = name;
-			this.patronymic_calc = patronymic;
-			this.address_calc = address;
-			this.date_time_calc = date_time;
-			this.clean_area_calc = clean_area;
-			this.clean_type_calc = clean_type;
-			this.clean_service_1_calc = clean_service_1;
-			this.clean_service_2_calc = clean_service_2;
-			this.clean_service_3_calc = clean_service_3;
-			this.clean_service_4_calc = clean_service_4;
-			this.clean_service_5_calc = clean_service_5;
-			this.clean_service_6_calc = clean_service_6;
-			this.clean_service_7_calc = clean_service_7;
-			this.clean_service_8_calc = clean_service_8;
+			order = new Order(surname, name, patronymic, address, date_time, clean_area, clean_type, clean_service_1, clean_service_2, clean_service_3, clean_service_4, clean_service_5, clean_service_6, clean_service_7, clean_service_8);
 		}
 
 		public static RequestCalc fromRequestParameters(HttpServletRequest request) {
@@ -76,24 +48,25 @@ public class Calc extends HttpServlet {
 		}
 		
 		public void setAsRequestAttributesAndCalculate(HttpServletRequest request) {
-			request.setAttribute("surname", surname_calc);
-			request.setAttribute("name", name_calc);
-			request.setAttribute("patronymic", patronymic_calc);
-			request.setAttribute("address", address_calc);
-			request.setAttribute("date_time", date_time_calc);
-			request.setAttribute("clean_area", clean_area_calc);
-			request.setAttribute("clean_type", clean_type_calc);
-			request.setAttribute("clean_service_1", clean_service_1_calc);
-			request.setAttribute("clean_service_2", clean_service_2_calc);
-			request.setAttribute("clean_service_3", clean_service_3_calc);
-			request.setAttribute("clean_service_4", clean_service_4_calc);
-			request.setAttribute("clean_service_5", clean_service_5_calc);
-			request.setAttribute("clean_service_6", clean_service_6_calc);
-			request.setAttribute("clean_service_7", clean_service_7_calc);
-			request.setAttribute("clean_service_8", clean_service_8_calc);
+			request.setAttribute("surname", order.getSurname_calc());
+			request.setAttribute("name", order.getName_calc());
+			request.setAttribute("patronymic", order.getPatronymic_calc());
+			request.setAttribute("address", order.getAddress_calc());
+			request.setAttribute("date_time", order.getDate_time_calc());
+			request.setAttribute("clean_area", order.getClean_area_calc());
+			request.setAttribute("clean_type", order.getClean_type_calc());
+			request.setAttribute("clean_service_1", order.getClean_service_1_calc());
+			request.setAttribute("clean_service_2", order.getClean_service_2_calc());
+			request.setAttribute("clean_service_3", order.getClean_service_3_calc());
+			request.setAttribute("clean_service_4", order.getClean_service_4_calc());
+			request.setAttribute("clean_service_5", order.getClean_service_5_calc());
+			request.setAttribute("clean_service_6", order.getClean_service_6_calc());
+			request.setAttribute("clean_service_7", order.getClean_service_7_calc());
+			request.setAttribute("clean_service_8", order.getClean_service_8_calc());
 
-			result = clean_service_1_calc;
-			request.setAttribute("result", result);
+			order.Calculate();
+
+			request.setAttribute("result", order.getPrice());
 		}
 	}
 }
