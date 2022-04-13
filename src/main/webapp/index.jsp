@@ -58,38 +58,38 @@
 			    </div>
 
 			    <div class="clean-details">
-				    <input type="radio" name="clean_type" id="clean_type_1" value="Генеральная">
-				    <input type="radio" name="clean_type" id="clean_type_2" value="Облегченная">
-		    		<input type="radio" name="clean_type" id="clean_type_3" value="После ремонта">
-		    		<input type="radio" name="clean_type" id="clean_type_4" value="Послестроительная">
+				    <input type="radio" name="clean_type" id="dot-1" value="Генеральная">
+				    <input type="radio" name="clean_type" id="dot-2" value="Облегченная">
+		    		<input type="radio" name="clean_type" id="dot-3" value="После ремонта">
+		    		<input type="radio" name="clean_type" id="dot-4" value="Послестроительная">
 			    	<input type="radio" name="clean2" id="m-1">
 				    <input type="radio" name="clean2" id="m-2">
     				<input type="radio" name="clean2" id="m-3">
 	    			<input type="radio" name="clean2" id="m-4">
-		    		<input type="checkbox" name="clean_service_1" id="clean_service_1" value="Полировка полов">
-			    	<input type="checkbox" name="clean_service_2" id="clean_service_2" value="Мытье посуды">
-				    <input type="checkbox" name="clean_service_3" id="clean_service_3" value="Стирка+глажка">
-    				<input type="checkbox" name="clean_service_4" id="clean_service_4" value="Мытье окон">
-	    			<input type="checkbox" name="clean_service_5" id="clean_service_5" value="Уборка стен">
-		    		<input type="checkbox" name="clean_service_6" id="clean_service_6" value="Чистка унитаза">
-			    	<input type="checkbox" name="clean_service_7" id="clean_service_7" value="Чистка раковин">
-				    <input type="checkbox" name="clean_service_8" id="clean_service_8" value="Уборка балкона">
+		    		<input type="checkbox" name="clean_service_1" id="dop-3" value="Полировка полов">
+			    	<input type="checkbox" name="clean_service_2" id="dop-4" value="Мытье посуды">
+				    <input type="checkbox" name="clean_service_3" id="dop-5" value="Стирка+глажка">
+    				<input type="checkbox" name="clean_service_4" id="dop-6" value="Мытье окон">
+	    			<input type="checkbox" name="clean_service_5" id="dop-7" value="Уборка стен">
+		    		<input type="checkbox" name="clean_service_6" id="dop-8" value="Чистка унитаза">
+			    	<input type="checkbox" name="clean_service_7" id="dop-9" value="Чистка раковин">
+				    <input type="checkbox" name="clean_service_8" id="dop-10" value="Уборка балкона">
 
 				    <span class="clean-title">Вид уборки</span>
 				    <div class="category">
-					    <label for="clean_type_1">
+					    <label for="dot-1">
 						    <span class="dot one"></span>
 						    <span class="clean_type">Генеральная</span>
 					    </label>
-					    <label for="clean_type_2">
+					    <label for="dot-2">
 						    <span class="dot two"></span>
 						    <span class="clean_type">Облегченная</span>
 					    </label>
-					    <label for="clean_type_3">
+					    <label for="dot-3">
 						    <span class="dot three"></span>
     						<span class="clean_type">После ремонта</span>
 	    				</label>
-		    			<label for="clean_type_4">
+		    			<label for="dot-4">
 			    			<span class="dot four"></span>
 				    		<span class="clean_type">Послестроительная</span>
 					    </label>
@@ -117,38 +117,38 @@
 
 				    <span class="clean-title">Дополнительные услуги</span>
     				<div class="category">
-	    				<label for="clean_service_1">
+	    				<label for="dop-3">
 		    				<span class="dop q"></span>
 			    			<span class="clean_service_1">Полировка полов</span>
 				    	</label>
-					    <label for="clean_service_2">
+					    <label for="dop-4">
     						<span class="dop w"></span>
 	    					<span class="clean_service_2">Мытье посуды</span>
 		    			</label>
-			    		<label for="clean_service_3">
+			    		<label for="dop-5">
 				    		<span class="dop r"></span>
 					    	<span class="clean_service_3">Стирка+глажка</span>
 					    </label>
-    					<label for="clean_service_4">
+    					<label for="dop-6">
 	    					<span class="dop t"></span>
 		    				<span class="clean_service_4">Мытье окон</span>
 			    		</label>
 				    </div>
 
     				<div class="category">
-	    				<label for="clean_service_5">
+	    				<label for="dop-7">
 		    				<span class="dop y"></span>
 			    			<span class="clean_service_5">Уборка стен</span>
 				    	</label>
-					    <label for="clean_service_6">
+					    <label for="dop-8">
     						<span class="dop u"></span>
 	    					<span class="clean_service_6">Чистка унитаза</span>
 		    			</label>
-			    		<label for="clean_service_7">
+			    		<label for="dop-9">
 				    		<span class="dop i"></span>
 					    	<span class="clean_service_7">Чистка раковин</span>
     					</label>
-	    				<label for="clean_service_8">
+	    				<label for="dop-10">
 		    				<span class="dop o"></span>
 			    			<span class="clean_service_8">Уборка балкона</span>
 				    	</label>
