@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-		<form class="form">
+		<form class="form" action="${pageContext.request.contextPath}/Auth" method="post">
 			<h1 class="form_title">Авторизация</h1>
 			<div class="form_group">
 				<input class="form_input" placeholder="">
