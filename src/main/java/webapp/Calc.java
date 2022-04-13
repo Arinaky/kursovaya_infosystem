@@ -21,7 +21,7 @@ public class Calc extends HttpServlet {
 
 	private static class RequestCalc {
 		private final Order order;
-		private String clean_services;
+		private String clean_services = "";
 		private String result;
 
 
@@ -67,8 +67,8 @@ public class Calc extends HttpServlet {
 
 			order.Calculate();
 
-			if (order.getClean_service_1_calc() != null) {clean_services = clean_services + order.getClean_service_1_calc() + "\n";}
-			if (order.getClean_service_2_calc() != null) {clean_services = clean_services + order.getClean_service_2_calc() + "\n";}
+			if (order.getClean_service_1_calc() != null) {clean_services = clean_services + order.getClean_service_1_calc() + "<br>";}
+			if (order.getClean_service_2_calc() != null) {clean_services = clean_services + order.getClean_service_2_calc() + "<br>";}
 			if (order.getClean_service_3_calc() != null) {clean_services = clean_services + order.getClean_service_3_calc() + "\n";}
 			if (order.getClean_service_4_calc() != null) {clean_services = clean_services + order.getClean_service_4_calc() + "\n";}
 			if (order.getClean_service_5_calc() != null) {clean_services = clean_services + order.getClean_service_5_calc() + "\n";}
