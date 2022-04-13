@@ -77,19 +77,19 @@
 
 				    <span class="clean-title">Вид уборки</span>
 				    <div class="category">
-					    <label for="dot-1">
+					    <label for="clean_type_1>
 						    <span class="dot one"></span>
 						    <span class="clean">Генеральная</span>
 					    </label>
-					    <label for="dot-2">
+					    <label for="clean_type_2">
 						    <span class="dot two"></span>
 						    <span class="clean">Облегченная</span>
 					    </label>
-					    <label for="dot-3">
+					    <label for="clean_type_3">
 						    <span class="dot three"></span>
     						<span class="clean">После ремонта</span>
 	    				</label>
-		    			<label for="dot-4">
+		    			<label for="clean_type_4">
 			    			<span class="dot four"></span>
 				    		<span class="clean">Послестроительная</span>
 					    </label>
@@ -117,40 +117,40 @@
 
 				    <span class="clean-title">Дополнительные услуги</span>
     				<div class="category">
-	    				<label for="dop-3">
+	    				<label for="clean_service_1">
 		    				<span class="dop q"></span>
-			    			<span class="clean3">Полировка полов</span>
+			    			<span class="clean_service_1">Полировка полов</span>
 				    	</label>
-					    <label for="dop-4">
+					    <label for="clean_service_2">
     						<span class="dop w"></span>
-	    					<span class="clean4">Мытье посуды</span>
+	    					<span class="clean_service_2">Мытье посуды</span>
 		    			</label>
-			    		<label for="dop-5">
+			    		<label for="clean_service_3">
 				    		<span class="dop r"></span>
-					    	<span class="clean5">Стирка+глажка</span>
+					    	<span class="clean_service_3">Стирка+глажка</span>
 					    </label>
-    					<label for="dop-6">
+    					<label for="clean_service_4">
 	    					<span class="dop t"></span>
-		    				<span class="clean6">Мытье окон</span>
+		    				<span class="clean_service_4">Мытье окон</span>
 			    		</label>
 				    </div>
 
     				<div class="category">
-	    				<label for="dop-7">
+	    				<label for="clean_service_5">
 		    				<span class="dop y"></span>
-			    			<span class="clean7">Уборка стен</span>
+			    			<span class="clean_service_5">Уборка стен</span>
 				    	</label>
-					    <label for="dop-8">
+					    <label for="clean_service_6">
     						<span class="dop u"></span>
-	    					<span class="clean8">Чистка унитаза</span>
+	    					<span class="clean_service_6">Чистка унитаза</span>
 		    			</label>
-			    		<label for="dop-9">
+			    		<label for="clean_service_7">
 				    		<span class="dop i"></span>
-					    	<span class="clean9">Чистка раковин</span>
+					    	<span class="clean_service_7">Чистка раковин</span>
     					</label>
-	    				<label for="dop-10">
+	    				<label for="clean_service_8">
 		    				<span class="dop o"></span>
-			    			<span class="clean10">Уборка балкона</span>
+			    			<span class="clean_service_8">Уборка балкона</span>
 				    	</label>
 				    </div>
     			</div>
