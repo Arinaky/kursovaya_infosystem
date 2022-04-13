@@ -163,9 +163,10 @@
 				<input type="submit" value="Заказать">
 			</div>
 
+            <p><a href="authorization.jsp">Авторизация</a></p>
+            <p><a href="admin.jsp">Админ-панель</a></p>
+
 		</form>
 	</div>
-    <p><a href="authorization.jsp">Авторизация</a></p>
-    <p><a href="admin.jsp">Авторизация</a></p>
 	</body>
 	</html>
