@@ -15,39 +15,44 @@ public class Calc extends HttpServlet {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
 		
-		request.getRequestDispatcher("/Result.jsp").forward(request, response);
+		request.getRequestDispatcher("/result.jsp").forward(request, response);
 	}
 	
 	private static class RequestCalc {
-		private final String radius_calc;
-		private final String height_calc;
-		private double result;
-		
-		public RequestCalc(String radius, String height) {
-			this.radius_calc = radius;
-			this.height_calc = height;
+		private final String surname_calc;
+		private final String name_calc;
+		private final String patronymic_calc;
+
+		private final String address_calc;
+		private final String data_time_calc;
+		private String result;
+
+		public RequestCalc(String surname, String name, String patronymic, String address, String data_time) {
+			this.surname_calc = surname;
+			this.name_calc = name;
+			this.patronymic_calc = patronymic;
+			this.address_calc = address;
+			this.data_time_calc = data_time;
 		}
 		
 		public static RequestCalc fromRequestParameters(HttpServletRequest request) {
 			return new RequestCalc(
-			request.getParameter("radius"),
-			request.getParameter("height"));
+					request.getParameter("surname"),
+					request.getParameter("name"),
+					request.getParameter("patronymic"),
+					request.getParameter("address"),
+					request.getParameter("data_time"));
 		}
 		
 		public void setAsRequestAttributesAndCalculate(HttpServletRequest request) {
-			
-			request.setAttribute("radius", radius_calc);
-			request.setAttribute("height", height_calc);
-			int radius_try;
-			int height_try;
-			try {
-				radius_try= Integer.valueOf(radius_calc);
-				height_try= Integer.valueOf(radius_calc);
-			} catch (NumberFormatException e) {
-				radius_try=0;
-				height_try=0;
-			}
-			result = Math.PI*Math.pow(radius_try, 2)*height_try/3.0;
+
+			request.setAttribute("surname", surname_calc);
+			request.setAttribute("name", name_calc);
+			request.setAttribute("patronymic", patronymic_calc);
+			request.setAttribute("address", address_calc);
+			request.setAttribute("data_time", data_time_calc);
+
+			result = surname_calc + name_calc + patronymic_calc + address_calc + data_time_calc;
 			request.setAttribute("result", result);
 		}
 	}
