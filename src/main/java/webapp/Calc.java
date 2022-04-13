@@ -23,29 +23,42 @@ public class Calc extends HttpServlet {
 		private String surname_calc;
 		private String name_calc;
 		private String patronymic_calc;
-		private String clean_calc;
 		private String address_calc;
-		private String data_time_calc;
+		private String date_time_calc;
+		private String clean_area_calc;
+		private String clean_type_calc;
+		private String clean_service_1_calc;
 		private String result;
 
 
-		public RequestCalc(String surname, String name, String patronymic, String address, String data_time, String clean) {
+		public RequestCalc(String surname, String name, String patronymic, String address, String date_time, String clean_area, String clean_type, String clean_service_1, String clean_service_2, String clean_service_3, String clean_service_4, String clean_service_5, String clean_service_6, String clean_service_7, String clean_service_8) {
 			this.surname_calc = surname;
 			this.name_calc = name;
 			this.patronymic_calc = patronymic;
 			this.address_calc = address;
-			this.data_time_calc = data_time;
-			this.clean_calc = clean;
+			this.date_time_calc = date_time;
+			this.clean_area_calc = clean_area;
+			this.clean_type_calc = clean_type;
+			this.clean_service_1_calc = clean_service_1;
 		}
-		
+
 		public static RequestCalc fromRequestParameters(HttpServletRequest request) {
 			return new RequestCalc(
 					request.getParameter("surname"),
 					request.getParameter("name"),
 					request.getParameter("patronymic"),
 					request.getParameter("address"),
-					request.getParameter("data_time"),
-					request.getParameter("clean"));
+					request.getParameter("date_time"),
+					request.getParameter("clean_area"),
+					request.getParameter("clean_type"),
+					request.getParameter("clean_service_1"),
+					request.getParameter("clean_service_2"),
+					request.getParameter("clean_service_3"),
+					request.getParameter("clean_service_4"),
+					request.getParameter("clean_service_5"),
+					request.getParameter("clean_service_6"),
+					request.getParameter("clean_service_7"),
+					request.getParameter("clean_service_8")	);
 		}
 		
 		public void setAsRequestAttributesAndCalculate(HttpServletRequest request) {
@@ -53,16 +66,13 @@ public class Calc extends HttpServlet {
 			request.setAttribute("name", name_calc);
 			request.setAttribute("patronymic", patronymic_calc);
 			request.setAttribute("address", address_calc);
-			request.setAttribute("data_time", data_time_calc);
-			request.setAttribute("clean", clean_calc);
+			request.setAttribute("date_time", date_time_calc);
+			request.setAttribute("clean_area", clean_area_calc);
+			request.setAttribute("clean_type", clean_type_calc);
+			request.setAttribute("clean_service_1", clean_service_1_calc);
 
-			if (surname_calc == null) {
-				result = "Не работает";
-				request.setAttribute("result", result);
-			} else {
-				result = surname_calc + " " + name_calc + " " + patronymic_calc + " " + address_calc + " " + data_time_calc + " " + clean_calc;
-				request.setAttribute("result", result);
-			}
+			result = clean_service_1_calc;
+			request.setAttribute("result", result);
 		}
 	}
 }

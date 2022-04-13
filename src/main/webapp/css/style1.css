@@ -14,10 +14,10 @@ body{
 }
 
 .container {
-	max-width: 700px;
-	width: 100%;
+	max-width: 770px;
+	width: 90%;
 	background: #fff;
-	padding: 25px 30px;
+	padding: 5px 30px;
 	border-radius: 20px;
 
 }
@@ -183,17 +183,10 @@ form input[type="radio"] {
 	display: none;
 }
 
-.but-det {
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	color: #fff;
-	background-color: #9acd32;
-	outline: none;
-	cursor: pointer;
-	transition: 0.3s;	
-	margin: 0 auto;
+form input[type="checkbox"] {
+	display: none;
 }
+
 
 .price {
 	text-align: center;
@@ -201,12 +194,14 @@ form input[type="radio"] {
 .price .output-box {
 	font-size: 22px;
 	text-align: center;
+
 }
 
 form .button {
 	height: 45px;
-	margin: 45px 0;
+	margin: 20px 0;
 	background-color: #d9d9d9;
+
 }
 form .button input {
 	height: 100%;
@@ -219,6 +214,7 @@ form .button input {
 	border-radius: 5px;
 	font-weight: 500;
 	background: yellowgreen;
+
 }
 
 @media (max-width: 584) {
@@ -239,6 +235,80 @@ form .button input {
 	.user-details::-webkit-scrollbar{
 		width: 100%;
 	}
+}
+
+
+.promo-d .input-box input {
+	height: 45px;
+	width: 100%;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding-left: 15px;
+	font-size: 16px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+}
+
+.promo {
+	display: flex;
+}
+.but-det {
+	font-family: sans-serif;
+	height: 45px;
+	width: 100%;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	padding-left: 15px;
+	font-size: 16px;
+	background-color: #9acd32;
+	outline: none;
+	cursor: pointer;
+	transition: 0.3s;	
+	margin: 0 auto;
+	color: #fff;
+}
+
+
+
+.header_body {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	justify-content: space-between;
+	height: 80px;
+	align-items: center;
+}
+
+.header_logo {
+	flex: 0 0 60px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.header_logo img {
+	max-width: 100%;
+	display: block;
+}
+
+.header-list {
+	display: flex;
+}
+.header-list li {
+	list-style: none;
+	margin: 0px 50px 0px 30px;
+	color: #darkred;
+	text-transform: uppercase;
+	font-size: 19px;
+	text-decoration: none;
+}
+.header_link {
+	color: #darkred;
+	text-transform: uppercase;
+	font-size: 19px;
+	text-decoration: none;
 }
 
 	

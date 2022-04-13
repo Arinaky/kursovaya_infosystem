@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Авторизация</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
 		<form class="form">
@@ -16,7 +16,7 @@
 
 			<div class="form_group">
 				<input class="form_input"  placeholder="">
-				<label class="form_label">Никчемный пароль</label>
+				<label class="form_label">Надежный пароль</label>
 			</div>
 
 			<div class="form_b">
