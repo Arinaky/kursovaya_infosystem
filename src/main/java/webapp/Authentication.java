@@ -2,6 +2,7 @@ package webapp;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Objects;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,7 +42,7 @@ public class Authentication extends HttpServlet {
             username_password.put("123", "123");
 
             if (username_password.containsKey(username)) {
-                if (username_password.get(username) == password) {
+                if (Objects.equals(username_password.get(username), password)) {
                     request.getRequestDispatcher("/admin.jsp").forward(request, response);
                 }
             }
