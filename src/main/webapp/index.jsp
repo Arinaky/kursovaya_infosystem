@@ -9,7 +9,7 @@
 	<body>
 		<div class="container">
 		<div class="title">Калькулятор клининговых услуг</div>
-		<form action="${pageContext.request.contextPath}/Calc" method="post">
+		<form action="${pageContext.request.contextPath}/Calc">
 			<div class="user-details">
 
 				<div class="input-box">
