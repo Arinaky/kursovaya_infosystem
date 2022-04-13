@@ -19,8 +19,8 @@
 						</div>
 						<nav class="header-menu">
 							<ul class="header-list">
-								<li><a href="" class="header_link">Панель админа</a></li>
-								<li><a href="" class="header_link">О нас</a></li>
+								<li><a href="authorization.jsp" class="header_link">Панель админа</a></li>
+								<li><a href="about.jsp" class="header_link">О нас</a></li>
 							</ul>
 						</nav>
 					</div>

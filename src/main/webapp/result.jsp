@@ -18,7 +18,9 @@
             Дата и время: ${date_time} <br>
             Площадь помещения: ${clean_area} <br>
             Вид уборки: ${clean_type} <br>
-            Дополнительные услуги: ${clean_services} <br>
+            Дополнительные услуги:
+            <br>
+            ${clean_services}
         </p>
         <br>
         <p>
