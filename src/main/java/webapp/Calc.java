@@ -52,8 +52,13 @@ public class Calc extends HttpServlet {
 			request.setAttribute("address", address_calc);
 			request.setAttribute("data_time", data_time_calc);
 
-			result = surname_calc + name_calc + patronymic_calc + address_calc + data_time_calc;
-			request.setAttribute("result", result);
+			if (surname_calc == null) {
+				result = "Не работает";
+				request.setAttribute("result", result);
+			} else {
+				result = surname_calc + name_calc + patronymic_calc + address_calc + data_time_calc;
+				request.setAttribute("result", result);
+			}
 		}
 	}
 }
