@@ -42,7 +42,7 @@ public class Authentication extends HttpServlet {
             username_password.put("123", "123");
 
             if (username_password.containsKey(username)) {
-                if (Objects.equals(username_password.get(username), password)) {
+                if (username_password.get(username).equals(password)) {
                     request.getRequestDispatcher("/admin.jsp").forward(request, response);
                 }
             }
