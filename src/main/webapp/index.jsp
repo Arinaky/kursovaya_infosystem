@@ -11,7 +11,7 @@
 		<div class="title">Калькулятор клининговых услуг</div>
 		<form action="${pageContext.request.contextPath}/Calc">
 			<div class="user-details">
-
+                <p>Проверка: ${1+2}</p>
 				<div class="input-box">
 					<span class="details">Фамилия</span>
 					<input type="text" placeholder="Ваша фамилия" required id="surname" value="surname">
