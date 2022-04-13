@@ -77,21 +77,21 @@
 
 				    <span class="clean-title">Вид уборки</span>
 				    <div class="category">
-					    <label for="clean_type_1>
+					    <label for="clean_type_1">
 						    <span class="dot one"></span>
-						    <span class="clean">Генеральная</span>
+						    <span class="clean_type">Генеральная</span>
 					    </label>
 					    <label for="clean_type_2">
 						    <span class="dot two"></span>
-						    <span class="clean">Облегченная</span>
+						    <span class="clean_type">Облегченная</span>
 					    </label>
 					    <label for="clean_type_3">
 						    <span class="dot three"></span>
-    						<span class="clean">После ремонта</span>
+    						<span class="clean_type">После ремонта</span>
 	    				</label>
 		    			<label for="clean_type_4">
 			    			<span class="dot four"></span>
-				    		<span class="clean">Послестроительная</span>
+				    		<span class="clean_type">Послестроительная</span>
 					    </label>
     				</div>
 
