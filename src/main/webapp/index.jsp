@@ -95,26 +95,6 @@
 					    </label>
     				</div>
 
-    				<span class="clean-title">Квадратура</span>
-	    			<div class="category">
-		    			<label for="m-1">
-			    			<span class="m a"></span>
-				    		<span class="clean2">0 - 100</span>
-					    </label>
-    					<label for="m-2">
-	    					<span class="m b"></span>
-		    				<span class="clean2">100-400</span>
-			    		</label>
-				    	<label for="m-3">
-					    	<span class="m c"></span>
-						    <span class="clean2">400-700</span>
-					    </label>
-    					<label for="m-4">
-	    					<span class="m d"></span>
-		    				<span class="clean2">700-1000</span>
-			    		</label>
-    				</div>
-
 				    <span class="clean-title">Дополнительные услуги</span>
     				<div class="category">
 	    				<label for="dop-3">
@@ -156,12 +136,6 @@
     			</div>
 
     			<div class="price">
-	    			<div class="output-box">
-		    			<span class="price-details">Стоимость</span>
-			    	</div>
-				    <label for="">
-					    <span class="price-details2">Здесь будет сумма</span>
-					</label>
         			<div class="button">
 		    		    <input type="submit" value="Заказать">
 			        </div>
