@@ -27,7 +27,7 @@
 				</div>
 			</header>
 
-		    <div class="title">Калькулятор</div>
+		    <div class="title">Калькулятор клининговых услуг</div>
 
 		    <form action="${pageContext.request.contextPath}/Calc" method="post">
 			    <div class="user-details">
