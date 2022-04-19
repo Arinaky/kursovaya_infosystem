@@ -48,7 +48,7 @@ public class SQLConnect {
             String name;
             String state;
             try {
-                statement.execute("INSERT INTO 'AnimeTitles' values('test_name', 'test_state'); ");}
+                statement.execute("INSERT INTO AnimeTitles values('test_name', 'test_state'); ");}
             catch (SQLException e) {result = "4";}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
     }
