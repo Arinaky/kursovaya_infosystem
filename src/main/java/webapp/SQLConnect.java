@@ -8,6 +8,9 @@ public class SQLConnect {
     public static Connection connection;
     public static Statement statement;
     public static ResultSet resultSet;
+    public static String result;
+
+    public static String getResult() {return result;}
 
     // Подключение к БД
     public static void Connect() {
@@ -37,6 +40,32 @@ public class SQLConnect {
 
             System.out.println("Таблица создана или уже существует"); }
         catch (SQLException e) { System.out.println("Ошибка! Не удалось создать таблицу!"); }
+    }
+
+    // Добавление данных в БД
+    public static void writeDB() {
+        if (connection != null) {
+            String name;
+            String state;
+            try {
+                statement.execute("INSERT INTO 'AnimeTitles' ('name', 'state') VALUES ('test_name', 'test_state'); ");}
+            catch (SQLException e) { System.out.println("Ошибка! Не удалось добавить данные в базу данных!"); }
+        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
+    }
+
+    // Чтение данных в БД
+    public static void readDB() {
+        if (statement != null) {
+            try {
+                resultSet = statement.executeQuery("SELECT * FROM AnimeTitles");
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String name = resultSet.getString("name");
+                    String state = resultSet.getString("state");
+                    result = result + name + " - " + state + "<br>";
+                }}
+            catch (SQLException e) { System.out.println("Ошибка! Не удалось прочесть данные в базе данных!"); }
+        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
     }
 
     // Проверка на число
