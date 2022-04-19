@@ -20,8 +20,8 @@ public class SQLConnect {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:" + SQLConnect.class.getResource("/database/anime.db").getPath());
             System.out.println("Успешное подключение!"); }
-        catch (ClassNotFoundException e) { result = e.getMessage();}
-        catch (SQLException e) { result = e.getMessage(); }
+        catch (ClassNotFoundException e) { result = "1";}
+        catch (SQLException e) { result = "2"; }
     }
 
     // Создание таблицы в БД
@@ -39,7 +39,7 @@ public class SQLConnect {
             statement.execute(SQL);
 
             System.out.println("Таблица создана или уже существует"); }
-        catch (SQLException e) { result = e.getMessage();}
+        catch (SQLException e) { result = "3"; }
     }
 
     // Добавление данных в БД
@@ -49,7 +49,7 @@ public class SQLConnect {
             String state;
             try {
                 statement.execute("INSERT INTO 'AnimeTitles' ('name', 'state') VALUES ('test_name', 'test_state'); ");}
-            catch (SQLException e) {result = e.getMessage();}
+            catch (SQLException e) {result = "4";}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
     }
 
@@ -64,7 +64,7 @@ public class SQLConnect {
                     String state = resultSet.getString("state");
                     result = result + id + " - " + name + " - " + state + "<br>";
                 }}
-            catch (SQLException e) { result = e.getMessage();}
+            catch (SQLException e) { result = "5";}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
     }
 
