@@ -62,7 +62,7 @@ public class SQLConnect {
                     int id = resultSet.getInt("id");
                     String name = resultSet.getString("name");
                     String state = resultSet.getString("state");
-                    result = result + name + " - " + state + "<br>";
+                    result = result + id + " - " + name + " - " + state + "<br>";
                 }}
             catch (SQLException e) { System.out.println("Ошибка! Не удалось прочесть данные в базе данных!"); }
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
