@@ -10,13 +10,13 @@
 		<form class="form" action="${pageContext.request.contextPath}/Auth" method="post">
 			<h1 class="form_title">Авторизация</h1>
 			<div class="form_group">
-				<input class="form_input" placeholder="" name="username" value="${username}">
-				<label class="form_label">Прекрасное имя</label>
+				<input class="form_input" placeholder="Прекрасное имя" name="username" value="${username}">
+				<label class="form_label"></label>
 			</div>
 
 			<div class="form_group">
-				<input class="form_input"  placeholder="" name="password" value="${password}">
-				<label class="form_label">Надежный пароль</label>
+				<input class="form_input"  placeholder="Надежный пароль" name="password" value="${password}">
+				<label class="form_label"></label>
 			</div>
 
 			<div class="form_b">
