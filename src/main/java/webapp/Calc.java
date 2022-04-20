@@ -80,6 +80,8 @@ public class Calc extends HttpServlet {
 				}
 			}
 
+			SQLConnect.insertOrder(order.getSurname_calc(), order.getName_calc(), order.getPatronymic_calc(), order.getAddress_calc(), order.getDate_calc(), order.getTime_calc(), Integer.parseInt(order.getClean_area_calc()), order.getClean_type_calc(), clean_services, order.getPrice());
+
 			String number = String.valueOf(SQLConnect.getLastOrder());
 			while (number.length() < 5) {
 				number = "0" + number;
