@@ -64,4 +64,14 @@ public class Order {
         
         // Добавить изменение цены из-за промокода
     }
+    
+    public void GeneratePDF() {
+    	String fullName = surname_calc +" "+ name_calc +" "+ patronymic_calc;
+        CreatePDF PDF = new CreatePDF();
+        try {
+        	PDF.Create(fullName, date_time_calc, address_calc, clean_type_calc, clean_area_calc, price);
+        } catch (IOException e) { 
+			e.printStackTrace();
+		}
+    }
 }
