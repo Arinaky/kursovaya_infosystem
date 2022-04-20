@@ -79,6 +79,7 @@ public class Calc extends HttpServlet {
 			}
 
 			request.setAttribute("clean_services", clean_services);
+			request.setAttribute("price", order.getPrice());
 			request.setAttribute("result", SQLConnect.getResult());
 		}
 	}
