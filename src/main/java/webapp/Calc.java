@@ -69,6 +69,9 @@ public class Calc extends HttpServlet {
 			request.setAttribute("clean_area", order.getClean_area_calc());
 			request.setAttribute("clean_type", order.getClean_type_calc());
 
+			SQLConnect.Connect();
+			SQLConnect.CreateDB();
+
 			order.Calculate();
 
 			for (String clean_service: order.getClean_services()) {
@@ -76,9 +79,6 @@ public class Calc extends HttpServlet {
 			}
 
 			request.setAttribute("clean_services", clean_services);
-			SQLConnect.Connect();
-			SQLConnect.CreateDB();
-			SQLConnect.readDB();
 			request.setAttribute("result", SQLConnect.getResult());
 		}
 	}

@@ -115,21 +115,6 @@ public class SQLConnect {
         return 0;
     }
 
-    // Чтение данных в БД
-    public static void readDB() {
-        if (statement != null) {
-            try {
-                resultSet = statement.executeQuery("SELECT * FROM AnimeTitles");
-                while (resultSet.next()) {
-                    int id = resultSet.getInt("id");
-                    String name = resultSet.getString("name");
-                    String state = resultSet.getString("state");
-                    result = result + id + " - " + name + " - " + state + "<br>";
-                }}
-            catch (SQLException e) { result = "5";}
-        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
-    }
-
     // Проверка на число
     public static boolean isNumeric(String str) {
         try { Double.parseDouble(str); return true; }
