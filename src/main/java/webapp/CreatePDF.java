@@ -38,7 +38,7 @@ public class CreatePDF {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
 		filepath=abspath+"src/main/webapp/Check.pdf";
-		String imagepath=abspath"src/main/webapp/img/logo.png";
+		String imagepath=abspath+"src/main/webapp/img/logo.png";
 		String fontpath =abspath+"src/main/webapp/fonts/times.ttf";
     	
 		try {	
@@ -57,7 +57,7 @@ public class CreatePDF {
 		}
 		
 		Paragraph paragraph = new Paragraph();
-	    paragraph.add(new Paragraph('ООО "Кошка Клининг"', new Font(times,20)));
+	    paragraph.add(new Paragraph("ООО \"Кошка Клининг\"", new Font(times,20)));
 	    paragraph.add(new Paragraph(fullName + ", ваш заказ по адресу " + address_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Дата и время уборки: " + date_time_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Площадь помещения: " + clean_area_calc, new Font(times,16)));
@@ -144,6 +144,7 @@ private void addHeader(PdfPTable table) {
         header.setPhrase(new Phrase(columnTitle, new Font(times,14)));
         table.addCell(header);
     });
- */
 }
+
+*/
 }
