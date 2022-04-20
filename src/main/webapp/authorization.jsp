@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="form_group">
-				<input class="form_input"  placeholder="Надежный пароль" name="password" value="${password}">
+				<input class="form_input" type="password" placeholder="Надежный пароль" name="password" value="${password}">
 				<label class="form_label"></label>
 			</div>
 
