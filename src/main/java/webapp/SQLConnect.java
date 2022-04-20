@@ -45,7 +45,7 @@ public class SQLConnect {
     // Добавление данных в БД
     public static void writeDB() {
         if (connection != null) {
-            String sql = "INSERT INTO warehouses(name,capacity) VALUES(?,?)";
+            String sql = "INSERT INTO AnimeTitles(name,state) VALUES(?,?)";
 
             try {
                 PreparedStatement statement = connection.prepareStatement(sql);
