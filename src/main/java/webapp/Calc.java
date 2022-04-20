@@ -92,6 +92,7 @@ public class Calc extends HttpServlet {
 			request.setAttribute("result", SQLConnect.getResult());
 			request.setAttribute("number", number);
 			order.GeneratePDF();
+			request.setAttribute("path", CreatePDF.getPdfPath());
 		}
 	}
 }

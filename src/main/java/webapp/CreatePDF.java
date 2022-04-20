@@ -4,25 +4,23 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.stream.Stream;
 
-import com.itextpdf.text.BadElementException;
-import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.BaseFont;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class CreatePDF {
 	
 	private BaseFont times = null;
+
+	public static String getPdfPath() {
+		return pdfPath;
+	}
+
+	public static String pdfPath;
 
     public void Create(String fullName, String time_calc, String date_calc, String address_calc, String clean_type_calc,
     		String clean_area_calc, int price) throws IOException {
@@ -38,6 +36,7 @@ public class CreatePDF {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
 		filepath=abspath+"src/main/webapp/Check.pdf";
+		pdfPath = filepath;
 		String imagepath=abspath+"src/main/webapp/img/logo.png";
 		String fontpath =abspath+"src/main/webapp/fonts/times.ttf";
     	
