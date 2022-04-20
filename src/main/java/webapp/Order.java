@@ -1,5 +1,6 @@
 package webapp;
 
+import java.io.IOException;
 import java.util.HashSet;
 
 public class Order {
@@ -75,8 +76,8 @@ public class Order {
     	String fullName = surname_calc +" "+ name_calc +" "+ patronymic_calc;
         CreatePDF PDF = new CreatePDF();
         try {
-        	PDF.Create(fullName, date_time_calc, address_calc, clean_type_calc, clean_area_calc, price);
-        } catch (IOException e) { 
+        	PDF.Create(fullName, time_calc, date_calc, address_calc, clean_type_calc, clean_area_calc, price);
+        } catch (IOException e) {
 			e.printStackTrace();
 		}
     }

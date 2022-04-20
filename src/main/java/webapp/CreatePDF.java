@@ -24,7 +24,7 @@ public class CreatePDF {
 	
 	private BaseFont times = null;
 
-    public void Create(String fullName, String date_time_calc, String address_calc, String clean_type_calc, 
+    public void Create(String fullName, String time_calc, String date_calc, String address_calc, String clean_type_calc,
     		String clean_area_calc, int price) throws IOException {
       	
     	Document document = new Document();
@@ -59,7 +59,7 @@ public class CreatePDF {
 		Paragraph paragraph = new Paragraph();
 	    paragraph.add(new Paragraph("ООО \"Кошка Клининг\"", new Font(times,20)));
 	    paragraph.add(new Paragraph(fullName + ", ваш заказ по адресу " + address_calc, new Font(times,16)));
-	    paragraph.add(new Paragraph("Дата и время уборки: " + date_time_calc, new Font(times,16)));
+	    paragraph.add(new Paragraph("Дата и время уборки: " + date_calc + time_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Площадь помещения: " + clean_area_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Тип уборки: " + clean_type_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Сумма заказа: " + Integer.toString(price), new Font(times,20)));
