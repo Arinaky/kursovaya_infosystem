@@ -4,12 +4,30 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>О нас</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style2.css">
 	</head>
 	<body>
-        <p><em>Команда разработчиков DreamTeam</em></p>
-        <p>Юнусбаев Руслан Ильгизович</p>
-        <p>Хизбуллина Ильзида Фанисовна</p>
-        <p>Шиманов Кирилл Андреевич</p>
-	</body>
+    		<div class="container">
+    		<form action="#">
+    			<div class="order-numb">
+            <h1>DreamTeam</h1>
+            <p>Участники команды: </p>
+            </div>
+            <div class="user-details">
+            <p>
+
+                Юнусбаев Руслан Ильгизович <br>
+                Хизбуллина Ильзида Фанисовна <br>
+                Шиманов Кирил Андреевич <br>
+            </p>
+            </div>
+
+    			<div class="button">
+    				<input type="submit" value="Вернуться назад">
+    			</div>
+
+    		</form>
+    	</div>
+
+    	</body>
 	</html>
