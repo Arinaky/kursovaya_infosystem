@@ -80,9 +80,14 @@ public class Calc extends HttpServlet {
 				}
 			}
 
+			String number = String.valueOf(SQLConnect.getLastOrder());
+			while (number.length() < 5) {
+				number = "0" + number;
+			}
+
 			request.setAttribute("clean_services", clean_services);
 			request.setAttribute("price", order.getPrice());
-			request.setAttribute("result", SQLConnect.getResult());
+			request.setAttribute("number", number);
 		}
 	}
 }
