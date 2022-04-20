@@ -110,7 +110,7 @@ public class SQLConnect {
                     result = String.valueOf(resultSet.getInt("cost"));
                     return Integer.parseInt(result);
                 }}
-            catch (SQLException e) { result = "5";}
+            catch (SQLException e) { result = e.getMessage();}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
         return 0;
     }
