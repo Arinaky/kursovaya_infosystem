@@ -45,11 +45,16 @@ public class SQLConnect {
     // Добавление данных в БД
     public static void writeDB() {
         if (connection != null) {
-            String name;
-            String state;
+            String sql = "INSERT INTO warehouses(name,capacity) VALUES(?,?)";
+
             try {
-                statement.execute("INSERT INTO AnimeTitles VALUES   ('test_name', 'test_state')");}
-            catch (SQLException e) {result = "4";}
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1, "name");
+                statement.setString(2, "capacity");
+                statement.executeUpdate();
+            } catch (SQLException e) {
+                result = "4";
+            }
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
     }
 
