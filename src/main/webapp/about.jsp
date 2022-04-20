@@ -11,7 +11,7 @@
     		<form action="#">
     			<div class="order-numb">
             <h1>DreamTeam</h1>
-            <p>Участники команды: </p>
+            <p> Участники команды: </p>
             </div>
             <div class="user-details">
             <p>
