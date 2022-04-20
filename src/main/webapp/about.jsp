@@ -23,8 +23,8 @@
             </div>
 
     			<div class="button">
-    				<input type="submit" value="Вернуться назад">
-    			</div>
+                <a href="index.jsp" class="header_link">Вернуться назад</a>
+                </div>
 
     		</form>
     	</div>
