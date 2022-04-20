@@ -63,6 +63,7 @@ public class Calc extends HttpServlet {
 
 			request.setAttribute("clean_services", clean_services);
 			SQLConnect.Connect();
+			SQLConnect.CreateDB();
 			SQLConnect.writeDB();
 			SQLConnect.writeDB();
 			SQLConnect.writeDB();
