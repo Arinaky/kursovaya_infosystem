@@ -1,2 +1,9 @@
+webapp/Authentication.class
 webapp/Calc.class
+webapp/CleanPrices$1.class
+webapp/SQLConnect.class
 webapp/Calc$RequestCalc.class
+webapp/Authentication$RequestAuth.class
+webapp/CleanPrices.class
+webapp/CleanPrices$2.class
+webapp/Order.class

@@ -8,6 +8,9 @@ public class SQLConnect {
     public static Connection connection;
     public static Statement statement;
     public static ResultSet resultSet;
+    public static String result;
+
+    public static String getResult() {return result;}
 
     // Подключение к БД
     public static void Connect() {
@@ -17,8 +20,8 @@ public class SQLConnect {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:" + SQLConnect.class.getResource("/database/anime.db").getPath());
             System.out.println("Успешное подключение!"); }
-        catch (ClassNotFoundException e) { System.out.println("Ошибка! JDBC драйвер не найден!"); }
-        catch (SQLException e) { System.out.println("Ошибка! База данных не найдена!"); }
+        catch (ClassNotFoundException e) { result = "1";}
+        catch (SQLException e) { result = "2"; }
     }
 
     // Создание таблицы в БД
@@ -36,7 +39,38 @@ public class SQLConnect {
             statement.execute(SQL);
 
             System.out.println("Таблица создана или уже существует"); }
-        catch (SQLException e) { System.out.println("Ошибка! Не удалось создать таблицу!"); }
+        catch (SQLException e) { result = "3"; }
+    }
+
+    // Добавление данных в БД
+    public static void writeDB() {
+        if (connection != null) {
+            String sql = "INSERT INTO AnimeTitles(name,state) VALUES(?,?)";
+
+            try {
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1, "name");
+                statement.setString(2, "capacity");
+                statement.executeUpdate();
+            } catch (SQLException e) {
+                result = e.getMessage();
+            }
+        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
+    }
+
+    // Чтение данных в БД
+    public static void readDB() {
+        if (statement != null) {
+            try {
+                resultSet = statement.executeQuery("SELECT * FROM AnimeTitles");
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String name = resultSet.getString("name");
+                    String state = resultSet.getString("state");
+                    result = result + id + " - " + name + " - " + state + "<br>";
+                }}
+            catch (SQLException e) { result = "5";}
+        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
     }
 
     // Проверка на число
