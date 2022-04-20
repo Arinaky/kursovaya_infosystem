@@ -53,7 +53,7 @@ public class SQLConnect {
                 statement.setString(2, "capacity");
                 statement.executeUpdate();
             } catch (SQLException e) {
-                result = "4";
+                result = e.getMessage();
             }
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
     }
