@@ -119,7 +119,7 @@ public class SQLConnect {
             try {
                 resultSet = statement.executeQuery("SELECT MAX(id) FROM Orders;");
                 while (resultSet.next()) {
-                    return resultSet.getInt("id");
+                    return resultSet.getInt(1);
                 }}
             catch (SQLException e) { result = e.getMessage();}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
