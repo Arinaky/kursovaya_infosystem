@@ -105,7 +105,7 @@ public class SQLConnect {
     public static int getValueFromDB(String table, String columnName, String name) {
         if (statement != null) {
             try {
-                resultSet = statement.executeQuery("SELECT cost FROM " + table + "WHERE " + columnName + "= " + name);
+                resultSet = statement.executeQuery("SELECT cost FROM " + table + "WHERE " + columnName + "='" + name+"';");
                 while (resultSet.next()) {
                     result = String.valueOf(resultSet.getInt("cost"));
                     return Integer.parseInt(result);
