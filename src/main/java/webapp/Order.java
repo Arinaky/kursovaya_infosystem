@@ -9,7 +9,8 @@ public class Order {
     public String getName_calc() {return name_calc;}
     public String getPatronymic_calc() {return patronymic_calc;}
     public String getAddress_calc() {return address_calc;}
-    public String getDate_time_calc() {return date_time_calc;}
+    public String getDate_calc() {return date_calc;}
+    public String getTime_calc() {return time_calc;}
     public String getClean_area_calc() {return clean_area_calc;}
     public String getClean_type_calc() {return clean_type_calc;}
     public HashSet<String> getClean_services() {return clean_services;}
@@ -20,19 +21,21 @@ public class Order {
     private String name_calc;
     private String patronymic_calc;
     private String address_calc;
-    private String date_time_calc;
+    private String date_calc;
+    private String time_calc;
     private String clean_area_calc;
     private String clean_type_calc;
     private HashSet<String> clean_services = new HashSet<>();
     private int price = 0;
 
     // Создание заказа
-    public Order(String surname_calc, String name_calc, String patronymic_calc, String address_calc, String date_time_calc, String clean_area_calc, String clean_type_calc, String clean_service_1_calc, String clean_service_2_calc, String clean_service_3_calc, String clean_service_4_calc, String clean_service_5_calc, String clean_service_6_calc, String clean_service_7_calc, String clean_service_8_calc) {
+    public Order(String surname_calc, String name_calc, String patronymic_calc, String address_calc, String date_calc, String time_calc, String clean_area_calc, String clean_type_calc, String clean_service_1_calc, String clean_service_2_calc, String clean_service_3_calc, String clean_service_4_calc, String clean_service_5_calc, String clean_service_6_calc, String clean_service_7_calc, String clean_service_8_calc) {
         this.surname_calc = surname_calc;
         this.name_calc = name_calc;
         this.patronymic_calc = patronymic_calc;
         this.address_calc = address_calc;
-        this.date_time_calc = date_time_calc;
+        this.date_calc = date_calc;
+        this.time_calc = time_calc;
         this.clean_area_calc = clean_area_calc;
         this.clean_type_calc = clean_type_calc;
         clean_services.add(clean_service_1_calc);

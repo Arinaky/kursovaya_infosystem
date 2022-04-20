@@ -24,7 +24,20 @@ public class Calc extends HttpServlet {
 		private String clean_services = "";
 
 		public RequestCalc(String surname, String name, String patronymic, String address, String date_time, String clean_area, String clean_type, String clean_service_1, String clean_service_2, String clean_service_3, String clean_service_4, String clean_service_5, String clean_service_6, String clean_service_7, String clean_service_8) {
-			order = new Order(surname, name, patronymic, address, date_time, clean_area, clean_type, clean_service_1, clean_service_2, clean_service_3, clean_service_4, clean_service_5, clean_service_6, clean_service_7, clean_service_8);
+			String date = "";
+			String time = "";
+			boolean itstime = false;
+			for (int i = 0; i < date_time.length(); i++) {
+				if (date_time.charAt(i) == 'T') {
+					itstime = true;
+				}
+				if (itstime == true) {
+					time = time + date_time.charAt(i);
+				} else {
+					date = date + date_time.charAt(i);
+				}
+			}
+			order = new Order(surname, name, patronymic, address, date, time, clean_area, clean_type, clean_service_1, clean_service_2, clean_service_3, clean_service_4, clean_service_5, clean_service_6, clean_service_7, clean_service_8);
 		}
 
 		public static RequestCalc fromRequestParameters(HttpServletRequest request) {
@@ -51,7 +64,8 @@ public class Calc extends HttpServlet {
 			request.setAttribute("name", order.getName_calc());
 			request.setAttribute("patronymic", order.getPatronymic_calc());
 			request.setAttribute("address", order.getAddress_calc());
-			request.setAttribute("date_time", order.getDate_time_calc());
+			request.setAttribute("date", order.getDate_calc());
+			request.setAttribute("time", order.getTime_calc());
 			request.setAttribute("clean_area", order.getClean_area_calc());
 			request.setAttribute("clean_type", order.getClean_type_calc());
 
@@ -64,9 +78,6 @@ public class Calc extends HttpServlet {
 			request.setAttribute("clean_services", clean_services);
 			SQLConnect.Connect();
 			SQLConnect.CreateDB();
-			SQLConnect.writeDB();
-			SQLConnect.writeDB();
-			SQLConnect.writeDB();
 			SQLConnect.readDB();
 			request.setAttribute("result", SQLConnect.getResult());
 		}
