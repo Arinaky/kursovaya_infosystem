@@ -68,29 +68,29 @@ public class CreatePDF {
 		paragraph.clear();
 		
 	    
+	    /*
 	    Image img = null;
 		try {
 			img = Image.getInstance(imagepath);
-			
-			
+
 		} catch (BadElementException e2) {
-			
+
 			e2.printStackTrace();
 		} catch (MalformedURLException e2) {
-			
+
 			e2.printStackTrace();
 		} catch (IOException e2) {
-			
 			e2.printStackTrace();
 		}
-		
-		img.setAbsolutePosition(300, 100); 
-		
+
+		img.setAbsolutePosition(300, 100);
+
 		try {
 				document.add(img);
 		} catch (DocumentException e) {
 				e.printStackTrace();
 		}
+	     */
 		
 	    /*
 
