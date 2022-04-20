@@ -75,12 +75,14 @@ public class Calc extends HttpServlet {
 			order.Calculate();
 
 			for (String clean_service: order.getClean_services()) {
-				clean_services = clean_services + clean_service + "<br>";
+				if (clean_service != null) {
+					clean_services = clean_services + clean_service + "<br>";
+				}
 			}
 
 			request.setAttribute("clean_services", clean_services);
 			request.setAttribute("price", order.getPrice());
-			request.setAttribute("result", order.getError());
+			request.setAttribute("result", SQLConnect.getResult());
 		}
 	}
 }

@@ -15,7 +15,6 @@ public class Order {
     public String getClean_type_calc() {return clean_type_calc;}
     public HashSet<String> getClean_services() {return clean_services;}
     public int getPrice() {return price;}
-    public String getError() {return error;}
     
     // Данные о заказе
     private String surname_calc;
@@ -28,7 +27,6 @@ public class Order {
     private String clean_type_calc;
     private HashSet<String> clean_services = new HashSet<>();
     private int price = 0;
-    private String error = "";
 
     // Создание заказа
     public Order(String surname_calc, String name_calc, String patronymic_calc, String address_calc, String date_calc, String time_calc, String clean_area_calc, String clean_type_calc, String clean_service_1_calc, String clean_service_2_calc, String clean_service_3_calc, String clean_service_4_calc, String clean_service_5_calc, String clean_service_6_calc, String clean_service_7_calc, String clean_service_8_calc) {
@@ -61,8 +59,9 @@ public class Order {
         price = price + CleanPrices.getClean_type_prices(clean_type_calc) + clean_area_try*CleanPrices.getAreaRatio();
 
         for (String clean_service: clean_services) {
-            error = clean_service;
-            // price = price + CleanPrices.getClean_services_prices(clean_service);
+            if (clean_service != null) {
+                price = price + CleanPrices.getClean_services_prices(clean_service);
+            }
         }
         
         // Добавить изменение цены из-за промокода
