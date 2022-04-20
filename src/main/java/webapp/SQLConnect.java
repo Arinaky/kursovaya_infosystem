@@ -1,7 +1,6 @@
 package webapp;
 
 import java.sql.*;
-import java.util.Scanner;
 
 public class SQLConnect {
 
@@ -101,6 +100,19 @@ public class SQLConnect {
                 result = e.getMessage();
             }
         } else { result = "Ошибка изменения значения"; }
+    }
+
+    public static int getValueFromDB(String table, String columnName, String name) {
+        if (statement != null) {
+            try {
+                resultSet = statement.executeQuery("SELECT cost FROM " + table + "WHERE " + columnName + "= " + name);
+                while (resultSet.next()) {
+                    result = String.valueOf(resultSet.getInt("cost"));
+                    return Integer.parseInt(result);
+                }}
+            catch (SQLException e) { result = "5";}
+        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
+        return 0;
     }
 
     // Чтение данных в БД

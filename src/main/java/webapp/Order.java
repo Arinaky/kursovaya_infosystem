@@ -54,10 +54,12 @@ public class Order {
         try {clean_area_try = Integer.parseInt(clean_area_calc);}
         catch (NumberFormatException e) {clean_area_try = 0;}
 
-        // price = price + CleanPrices.getClean_type_prices(clean_type_calc) + clean_area_try*CleanPrices.getAreaRatio();
+        CleanPrices.initCleanPrices();
+
+        price = price + CleanPrices.getClean_type_prices(clean_type_calc) + clean_area_try*CleanPrices.getAreaRatio();
 
         for (String clean_service: clean_services) {
-            // price = price + CleanPrices.getClean_services_prices(clean_service);
+            price = price + CleanPrices.getClean_services_prices(clean_service);
         }
         
         // Добавить изменение цены из-за промокода
