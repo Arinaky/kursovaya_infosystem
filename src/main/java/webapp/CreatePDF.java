@@ -62,7 +62,12 @@ public class CreatePDF {
 	    paragraph.add(new Paragraph("Площадь помещения: " + clean_area_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Тип уборки: " + clean_type_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Сумма заказа: " + Integer.toString(price), new Font(times,20)));
-	    
+
+		try {
+			document.add(paragraph);
+		} catch (DocumentException e1) {
+			e1.printStackTrace();
+		}
 	    
 		paragraph.clear();
 		
