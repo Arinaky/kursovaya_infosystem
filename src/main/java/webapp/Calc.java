@@ -75,7 +75,7 @@ public class Calc extends HttpServlet {
 			order.Calculate();
 
 			for (String clean_service: order.getClean_services()) {
-				clean_services = clean_service + clean_service + "<br>";
+				clean_services = clean_services + clean_service + "<br>";
 			}
 
 			request.setAttribute("clean_services", clean_services);
