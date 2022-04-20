@@ -19,7 +19,7 @@ public class CleanPrices {
         clean_type_prices.put("После ремонта", SQLConnect.getValueFromDB("CleanTypes", "clean_type", "После ремонта"));
         clean_type_prices.put("Послестроительная", SQLConnect.getValueFromDB("CleanTypes", "clean_type", "Послестроительная"));
 
-        clean_services_prices.put("Полировка полов", SQLConnect.getValueFromDB("CleanServices", "clean_service", "Полировка полов")*areaRatio);
+        clean_services_prices.put("Полировка полов", SQLConnect.getValueFromDB("CleanServices", "clean_service", "Полировка полов"));
         clean_services_prices.put("Мытье посуды", SQLConnect.getValueFromDB("CleanServices", "clean_service", "Мытье посуды"));
         clean_services_prices.put("Стирка+глажка", SQLConnect.getValueFromDB("CleanServices", "clean_service", "Стирка+глажка"));
         clean_services_prices.put("Мытье окон", SQLConnect.getValueFromDB("CleanServices", "clean_service", "Мытье окон"));

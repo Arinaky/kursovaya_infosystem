@@ -60,7 +60,11 @@ public class Order {
 
         for (String clean_service: clean_services) {
             if (clean_service != null) {
-                price = price + CleanPrices.getClean_services_prices(clean_service);
+                if (clean_service == "Полировка полов") {
+                    price = price + CleanPrices.getClean_services_prices(clean_service)*clean_area_try;
+                } else {
+                    price = price + CleanPrices.getClean_services_prices(clean_service);
+                }
             }
         }
         
