@@ -11,7 +11,7 @@
         		<div class="title">Благодарим за обращение!</div>
         		<form action="#">
         			<div class="order-numb">
-                <h1>№22401</h1>
+                <h1>№${number}</h1>
                 <p>Данные о вашем заказе: </p>
                 </div>
                 <div class="user-details">
@@ -33,7 +33,7 @@
 
         			<div class="result">
         				 <p>
-                    К оплате: ${price} , ${result}
+                    К оплате: ${price} руб.
                 		</p>
           			</div>
 

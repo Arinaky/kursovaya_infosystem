@@ -107,8 +107,19 @@ public class SQLConnect {
             try {
                 resultSet = statement.executeQuery("SELECT cost FROM " + table + " WHERE " + columnName + "='" + name+"';");
                 while (resultSet.next()) {
-                    result = String.valueOf(resultSet.getInt("cost"));
-                    return Integer.parseInt(result);
+                    return resultSet.getInt("cost");
+                }}
+            catch (SQLException e) { result = e.getMessage();}
+        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
+        return 0;
+    }
+
+    public static int getLastOrder() {
+        if (statement != null) {
+            try {
+                resultSet = statement.executeQuery("SELECT MAX(id) FROM Orders;");
+                while (resultSet.next()) {
+                    return resultSet.getInt("id");
                 }}
             catch (SQLException e) { result = e.getMessage();}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
