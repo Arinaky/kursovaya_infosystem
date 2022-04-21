@@ -35,7 +35,7 @@ public class CreatePDF {
 		for(int i=0;i<(lengthpath-1);i++) {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
-		filepath=abspath + "Check.pdf";
+		filepath=abspath + "/webapps/WebApp/Check.pdf";
 		pdfPath = filepath;
 		String imagepath=abspath+"src/main/webapp/img/logo.png";
 		String fontpath =abspath+"src/main/webapp/fonts/times.ttf";
