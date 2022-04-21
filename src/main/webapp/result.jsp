@@ -42,6 +42,7 @@
                     </div>
 
         		</form>
+        		${path}
         		<a href=${path}>PDF</a>
         	</div>
 
