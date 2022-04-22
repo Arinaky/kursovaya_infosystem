@@ -68,21 +68,21 @@ public class SQLConnect {
 
     public static void insertOrder(String surname, String name, String patronymic, String address, String date, String time, int clean_area, String clean_type, String clean_services, int price) {
         if (connection != null) {
-            String sql = "INSERT INTO Orders(surname, name, patronymic,address,date,time,clean_area,clean_type,clean_services,price) " +
-                    "VALUES('" +
-                    surname + "','" +
-                    name + "','" +
-                    patronymic + "','" +
-                    address + "','" +
-                    date + "','" +
-                    time + "','" +
-                    clean_area + "','" +
-                    clean_type + "','" +
-                    clean_services + "','" + price + "')";
+            String sql = "INSERT INTO Orders(surname, name, patronymic,address,date,time,clean_area,clean_type,clean_services,price) VALUES(?,?,?,?,?,?,?,?,?,?)";
 
             try {
-                Statement statement = connection.prepareStatement(sql);
-                statement.execute(sql);
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setString(1, surname);
+                statement.setString(2, name);
+                statement.setString(3, patronymic);
+                statement.setString(4, address);
+                statement.setString(5, date);
+                statement.setString(6, time);
+                statement.setInt(7, clean_area);
+                statement.setString(8, clean_type);
+                statement.setString(9, clean_services);
+                statement.setInt(10, price);
+                statement.execute();
             } catch (SQLException e) {
                 result = e.getMessage();
             }
