@@ -63,7 +63,7 @@ public class SQLConnect {
                     " cost INTEGER)";
 
             statement.executeUpdate(SQL);
-        } catch (SQLException e) { result = "3"; }
+        } catch (SQLException e) { result = e.getMessage(); }
     }
 
     public static void insertOrder(String surname, String name, String patronymic, String address, String date, String time, int clean_area, String clean_type, String clean_services, int price) {
