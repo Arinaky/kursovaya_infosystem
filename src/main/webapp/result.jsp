@@ -42,8 +42,8 @@
                     </div>
 
         		</form>
-        		${path}
-        		<a href="/WebApp/Check.pdf">PDF</a>
+        		<a href="/WebApp/Check.pdf">Открыть PDF</a>
+        		<a href="/WebApp/Check.pdf" download>Скачать PDF</a>
         	</div>
 
 	</body>

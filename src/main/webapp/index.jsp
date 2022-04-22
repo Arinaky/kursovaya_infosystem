@@ -154,7 +154,6 @@
 	            <div class="input-box">
 				    <button class="but-det">Применить</button>
 			    </div>
-			    ${pageContext.request.contextPath}
 	        </form>
 </body>
 </html>
