@@ -37,8 +37,8 @@ public class CreatePDF {
 		}
 		filepath=abspath + "webapps/WebApp/Check.pdf";
 		pdfPath = filepath;
-		String imagepath=abspath+"src/main/webapp/img/logo.png";
-		String fontpath =abspath+"src/main/webapp/fonts/times.ttf";
+		String imagepath= CreatePDF.class.getResource("/img/logo.png").getPath();
+		String fontpath = CreatePDF.class.getResource("/fonts/times.ttf").getPath();
     	
 		try {	
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
