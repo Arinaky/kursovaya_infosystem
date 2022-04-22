@@ -120,7 +120,7 @@ public class SQLConnect {
                 resultSet = statement.executeQuery("SELECT MAX(id) FROM Orders;");
                 result = String.valueOf(resultSet.getInt(0));
             }
-            catch (SQLException e) { e.getMessage();}
+            catch (SQLException e) { result = "Ошибка с получением номера последнего заказа - " + e.getMessage();}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
         return 0;
     }
