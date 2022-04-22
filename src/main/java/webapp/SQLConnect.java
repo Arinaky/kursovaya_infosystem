@@ -118,9 +118,8 @@ public class SQLConnect {
         if (statement != null) {
             try {
                 resultSet = statement.executeQuery("SELECT MAX(id) FROM Orders;");
-                while (resultSet.next()) {
-                    return Integer.parseInt(resultSet.getString("id"));
-                }}
+                result = String.valueOf(resultSet);
+            }
             catch (SQLException e) { result = "214";}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
         return 0;
