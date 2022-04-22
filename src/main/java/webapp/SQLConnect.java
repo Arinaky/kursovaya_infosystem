@@ -121,7 +121,7 @@ public class SQLConnect {
                 while (resultSet.next()) {
                     return Integer.parseInt(resultSet.getString("id"));
                 }}
-            catch (SQLException e) { result = e.getMessage();}
+            catch (SQLException e) { result = "214";}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
         return 0;
     }
