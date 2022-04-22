@@ -85,7 +85,7 @@ public class CreatePDF {
 			e2.printStackTrace();
 		}
 
-		img.setAbsolutePosition(450, 650);
+		img.setAbsolutePosition(450, 700);
 
 		try {
 				document.add(img);
