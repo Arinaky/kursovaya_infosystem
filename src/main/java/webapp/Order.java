@@ -76,7 +76,7 @@ public class Order {
     	String fullName = surname_calc +" "+ name_calc +" "+ patronymic_calc;
         CreatePDF PDF = new CreatePDF();
         try {
-        	PDF.Create(fullName, time_calc, date_calc, address_calc, clean_type_calc, clean_area_calc, price);
+        	PDF.Create(fullName, time_calc, date_calc, address_calc, clean_type_calc, clean_area_calc, price, clean_services);
         } catch (IOException e) {
 			e.printStackTrace();
 		}

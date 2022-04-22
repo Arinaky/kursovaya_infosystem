@@ -4,10 +4,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class CreatePDF {
@@ -20,8 +24,7 @@ public class CreatePDF {
 
 	public static String pdfPath;
 
-    public void Create(String fullName, String time_calc, String date_calc, String address_calc, String clean_type_calc,
-    		String clean_area_calc, int price) throws IOException {
+    public void Create(String fullName, String time_calc, String date_calc, String address_calc, String clean_type_calc, String clean_area_calc, int price, HashSet<String> clean_services) throws IOException {
       	
     	Document document = new Document();
     	
@@ -29,14 +32,14 @@ public class CreatePDF {
 		String[] parsfilepath = filepath.split("/");
 		
 		int lengthpath = parsfilepath.length;
-		String abspath=""; 
+		StringBuilder abspath= new StringBuilder();
 		for(int i=0;i<(lengthpath-1);i++) {
-			abspath=abspath+parsfilepath[i]+"/";
+			abspath.append(parsfilepath[i]).append("/");
 		}
 		filepath=abspath + "webapps/WebApp/Check.pdf";
 		pdfPath = filepath;
-		String imagepath= CreatePDF.class.getResource("/img/logo.png").getPath();
-		String fontpath = CreatePDF.class.getResource("/fonts/times.ttf").getPath();
+		String imagepath= Objects.requireNonNull(CreatePDF.class.getResource("/img/logo.png")).getPath();
+		String fontpath = Objects.requireNonNull(CreatePDF.class.getResource("/fonts/times.ttf")).getPath();
     	
 		try {	
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
@@ -45,8 +48,7 @@ public class CreatePDF {
 		}
 					
 		document.open(); 
-		
-		//BaseFont times = null;
+
 		try {
 			times = BaseFont.createFont(fontpath, "cp1251", BaseFont.EMBEDDED);
 		} catch (DocumentException | IOException e) {
@@ -59,7 +61,7 @@ public class CreatePDF {
 	    paragraph.add(new Paragraph("Дата и время уборки: " + date_calc + time_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Площадь помещения: " + clean_area_calc, new Font(times,16)));
 	    paragraph.add(new Paragraph("Тип уборки: " + clean_type_calc, new Font(times,16)));
-	    paragraph.add(new Paragraph("Сумма заказа: " + Integer.toString(price), new Font(times,20)));
+	    paragraph.add(new Paragraph("Сумма заказа: " + price, new Font(times,20)));
 
 		try {
 			document.add(paragraph);
@@ -68,24 +70,15 @@ public class CreatePDF {
 		}
 	    
 		paragraph.clear();
-		
-	    
 
 	    Image img = null;
 		try {
 			img = Image.getInstance(imagepath);
-
-		} catch (BadElementException e2) {
-
-			e2.printStackTrace();
-		} catch (MalformedURLException e2) {
-
-			e2.printStackTrace();
-		} catch (IOException e2) {
+		} catch (BadElementException | IOException e2) {
 			e2.printStackTrace();
 		}
 
-		img.setAbsolutePosition(450, 700);
+		Objects.requireNonNull(img).setAbsolutePosition(450, 700);
 
 		try {
 				document.add(img);
@@ -93,60 +86,44 @@ public class CreatePDF {
 				e.printStackTrace();
 		}
 
-		
-	    /*
+		if (!clean_services.isEmpty())	{
+			paragraph.clear();
 
-		 paragraph.clear();
-		 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
-		 
-		 try {
-				document.add(paragraph);
-			} catch (DocumentException e1) {
-				e1.printStackTrace();
+			PdfPTable table = new PdfPTable(2);
+			addHeader(table);
+			for (String clean_service: clean_services) {
+				if (clean_service != null) {
+					addRows(table, clean_service, String.valueOf(CleanPrices.getClean_services_prices(clean_service)));
+				}
 			}
-	    
 
-		 PdfPTable table = new PdfPTable(4); 
-		 addHeader(table);
-		 addRows(table);
-		 
-		 try {
-			document.add(table);
-		} catch (DocumentException e) {
-			e.printStackTrace();
+			try {
+				document.add(table);
+			} catch (DocumentException e) {
+				e.printStackTrace();
+			}
 		}
-	     */
 	     
 	    document.close(); 
 	    
 	    
     }
     
-/*
-private void addRows(PdfPTable table) {
-		
-		String cell1 = Calc.NumberGet;
-		String cell2 = Calc.GroupGet;
-		String cell3 = Calc.FIOGet;
-		String cell4 = Calc.PointsGet;
-				
+
+	private void addRows(PdfPTable table, String cell1, String cell2) {
 		table.addCell((new Phrase(cell1, new Font(times,14))));
 	    table.addCell((new Phrase(cell2, new Font(times,14))));
-	    table.addCell((new Phrase(cell3, new Font(times,14))));
-	    table.addCell((new Phrase(cell4, new Font(times,14))));
-		
 	}
 
-private void addHeader(PdfPTable table) {
-	Stream.of("Номер", "Группа", "ФИО", "Оценка")
-      .forEach(columnTitle -> {
-        PdfPCell header = new PdfPCell();
-        header.setBackgroundColor(BaseColor.LIGHT_GRAY);
-        header.setBorderWidth(2);
-        header.setPhrase(new Phrase(columnTitle, new Font(times,14)));
-        table.addCell(header);
-    });
+	private void addHeader(PdfPTable table) {
+		Stream.of("Дополнительные услуги", "Цена").forEach(columnTitle -> {
+        	PdfPCell header = new PdfPCell();
+        	header.setBackgroundColor(BaseColor.LIGHT_GRAY);
+        	header.setBorderWidth(2);
+        	header.setPhrase(new Phrase(columnTitle, new Font(times,14)));
+        	table.addCell(header);
+		});
 }
 
-*/
+
 }
