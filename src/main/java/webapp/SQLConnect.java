@@ -118,7 +118,7 @@ public class SQLConnect {
         if (statement != null) {
             try {
                 resultSet = statement.executeQuery("SELECT MAX(id) FROM Orders;");
-                result = String.valueOf(resultSet.getInt(1));
+                result = "Номер последнего заказа - " + resultSet.getInt(1);
             }
             catch (SQLException e) { result = "Ошибка с получением номера последнего заказа - " + e.getMessage();}
         } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
