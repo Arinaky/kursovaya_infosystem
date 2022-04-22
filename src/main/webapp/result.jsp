@@ -42,7 +42,9 @@
                     </div>
 
         		</form>
+        		${result}
         		<a href="/WebApp/Check.pdf">Открыть PDF</a>
+        		<br>
         		<a href="/WebApp/Check.pdf" download>Скачать PDF</a>
         	</div>
 
