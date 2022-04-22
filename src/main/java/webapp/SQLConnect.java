@@ -8,19 +8,26 @@ public class SQLConnect {
     public static Statement statement;
     public static ResultSet resultSet;
     public static String result;
+    public static boolean connect = false;
 
     public static String getResult() {return result;}
 
     // Подключение к БД
     public static void Connect() {
-        connection = null;
-        System.out.println("...");
-        try {
-            Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:" + SQLConnect.class.getResource("/database/anime.db").getPath());
-            System.out.println("Успешное подключение!"); }
-        catch (ClassNotFoundException e) { result = "1";}
-        catch (SQLException e) { result = "2"; }
+        if (connect == false) {
+            connection = null;
+            System.out.println("...");
+            try {
+                Class.forName("org.sqlite.JDBC");
+                connection = DriverManager.getConnection("jdbc:sqlite:" + SQLConnect.class.getResource("/database/anime.db").getPath());
+                System.out.println("Успешное подключение!");
+            } catch (ClassNotFoundException e) {
+                result = "1";
+            } catch (SQLException e) {
+                result = "2";
+            }
+            connect = true;
+        }
     }
 
     // Создание таблицы в БД
@@ -82,7 +89,7 @@ public class SQLConnect {
                 statement.setString(8, clean_type);
                 statement.setString(9, clean_services);
                 statement.setInt(10, price);
-                statement.execute();
+                statement.executeUpdate();
             } catch (SQLException e) {
                 result = e.getMessage();
             }
