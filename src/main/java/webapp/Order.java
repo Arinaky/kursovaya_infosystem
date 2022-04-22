@@ -26,7 +26,7 @@ public class Order {
     private String time_calc;
     private String clean_area_calc;
     private String clean_type_calc;
-    private HashSet<String> clean_services;
+    private HashSet<String> clean_services = new HashSet<>();
     private int price = 0;
 
     // Создание заказа
@@ -47,6 +47,7 @@ public class Order {
         clean_services.add(clean_service_6_calc);
         clean_services.add(clean_service_7_calc);
         clean_services.add(clean_service_8_calc);
+        clean_services.remove(null);
     }
 
     public void Calculate() {
