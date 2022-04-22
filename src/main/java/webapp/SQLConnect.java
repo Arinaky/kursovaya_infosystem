@@ -59,7 +59,7 @@ public class SQLConnect {
 
             SQL = "CREATE TABLE IF NOT EXISTS Promocodes " +
                     "(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    " promo-code text, " +
+                    " promo_code text, " +
                     " cost INTEGER)";
 
             statement.executeUpdate(SQL);
