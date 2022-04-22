@@ -4,11 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -72,7 +70,7 @@ public class CreatePDF {
 		paragraph.clear();
 		
 	    
-	    /*
+
 	    Image img = null;
 		try {
 			img = Image.getInstance(imagepath);
@@ -94,7 +92,7 @@ public class CreatePDF {
 		} catch (DocumentException e) {
 				e.printStackTrace();
 		}
-	     */
+
 		
 	    /*
 
