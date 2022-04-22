@@ -49,16 +49,16 @@
 				    </div>
 				    <div class="input-box">
 					    <span class="details">Дата и время</span>
-					    <input type="datetime-local" name="date_time" id="date_time" value="${date_time}">
+					    <input type="datetime-local" required name="date_time" id="date_time" value="${date_time}">
 				    </div>
 				    <div class="input-box">
                         <span class="details">Площадь помещения</span>
-                    	<input type="text" name="clean_area" id="clean_area" value="${clean_area}">
+                    	<input type="text" required name="clean_area" id="clean_area" value="${clean_area}">
                     </div>
 			    </div>
 
 			    <div class="clean-details">
-				    <input type="radio" name="clean_type" id="dot-1" value="Генеральная">
+				    <input type="radio" name="clean_type" id="dot-1" value="Генеральная" required>
 				    <input type="radio" name="clean_type" id="dot-2" value="Облегченная">
 		    		<input type="radio" name="clean_type" id="dot-3" value="После ремонта">
 		    		<input type="radio" name="clean_type" id="dot-4" value="Послестроительная">
