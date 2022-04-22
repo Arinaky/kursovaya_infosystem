@@ -43,7 +43,7 @@
 
         		</form>
         		${path}
-        		<a href=${path}>PDF</a>
+        		<a href="/WebApp/Check.pdf">PDF</a>
         	</div>
 
 	</body>
