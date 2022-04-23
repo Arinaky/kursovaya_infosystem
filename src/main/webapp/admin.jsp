@@ -14,7 +14,7 @@
 
 	    <div class="container">
 		    <div class="title">Цена за уборку одного квадратного метра площади помещения</div>
-		    <form action="#">
+		    <form action="${pageContext.request.contextPath}/Calc" method="post">
 			    <div class="user-details">
 				    <div class="input-box">
 					    <span class="details">Цена за уборку одного квадратного метра</span>

@@ -43,11 +43,11 @@
                 ${result}
         		</form>
 
-        		<div>
+        		<div class="button">
         		    <a href="/WebApp/Check.pdf">Открыть PDF</a>
         		</div>
 
-                <div>
+                <div class="button">
         		    <a href="/WebApp/Check.pdf" download>Скачать PDF</a>
         		</div>
         	</div>

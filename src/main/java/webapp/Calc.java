@@ -15,8 +15,6 @@ public class Calc extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
-		String result = request.getRequestURI();
-		request.setAttribute("result", result);
 
 		request.getRequestDispatcher("/result.jsp").forward(request, response);
 	}
