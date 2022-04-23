@@ -114,9 +114,14 @@ public class SQLConnect {
         if (statement != null) {
             try {
                 resultSet = statement.executeQuery("SELECT cost FROM " + table + " WHERE " + columnName + "='" + name+"';");
-                while (resultSet.next()) {
-                    return resultSet.getInt("cost");
-                }} catch (SQLException ignored) { }}
+                if (columnName.equals("clean_area")) {
+                    return resultSet.getInt(1);
+                } else {
+                    while (resultSet.next()) {
+                        return resultSet.getInt("cost");
+                    }
+                }
+                } catch (SQLException ignored) { }}
         return 0;
     }
 
