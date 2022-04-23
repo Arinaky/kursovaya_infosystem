@@ -31,9 +31,15 @@ public class SQLConnect {
 
     public static void Close() {
         try {
-            connection.close();
-            statement.close();
-            resultSet.close();
+            if (!connection.isClosed()) {
+                connection.close();
+            }
+            if (!statement.isClosed()) {
+                statement.close();
+            }
+            if (!resultSet.isClosed()) {
+                resultSet.close();
+            }
         } catch (SQLException ignored) {}
     }
 
