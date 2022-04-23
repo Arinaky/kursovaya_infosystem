@@ -7,10 +7,7 @@ public class SQLConnect {
     public static Connection connection;
     public static Statement statement;
     public static ResultSet resultSet;
-    public static String result;
     public static boolean connect = false;
-
-    public static String getResult() {return result;}
 
     // Подключение к БД
     public static void Connect() {
@@ -21,13 +18,17 @@ public class SQLConnect {
                 Class.forName("org.sqlite.JDBC");
                 connection = DriverManager.getConnection("jdbc:sqlite:" + SQLConnect.class.getResource("/database/anime.db").getPath());
                 System.out.println("Успешное подключение!");
-            } catch (ClassNotFoundException e) {
-                result = "1";
-            } catch (SQLException e) {
-                result = "2";
-            }
+            } catch (ClassNotFoundException | SQLException ignored) {}
             connect = true;
         }
+    }
+
+    public static void Close() {
+        try {
+            connection.close();
+            statement.close();
+            resultSet.close();
+        } catch (SQLException ignored) {}
     }
 
     // Создание таблицы в БД
@@ -70,7 +71,14 @@ public class SQLConnect {
                     " cost INTEGER)";
 
             statement.executeUpdate(SQL);
-        } catch (SQLException e) { result = e.getMessage(); }
+
+            SQL = "CREATE TABLE IF NOT EXISTS CleanArea " +
+                    "(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    " clean_area text, " +
+                    " cost INTEGER)";
+
+            statement.executeUpdate(SQL);
+        } catch (SQLException ignored) { }
     }
 
     public static void insertOrder(String surname, String name, String patronymic, String address, String date, String time, int clean_area, String clean_type, String clean_services, int price) {
@@ -90,23 +98,16 @@ public class SQLConnect {
                 statement.setString(9, clean_services);
                 statement.setInt(10, price);
                 statement.executeUpdate();
-            } catch (SQLException e) {
-                result = e.getMessage();
-            }
-        } else { result = "Ошибка добавления заказа в БД"; }
+            } catch (SQLException ignored) {}}
     }
 
     public static void changeDBValue(String table, String column, String columnName, String value) {
         if (connection != null) {
             String sql = "UPDATE " + table + " SET cost = " + value + " WHERE " + column + " = " + columnName + ";";
-
             try {
                 PreparedStatement statement = connection.prepareStatement(sql);
                 statement.executeUpdate();
-            } catch (SQLException e) {
-                result = e.getMessage();
-            }
-        } else { result = "Ошибка изменения значения"; }
+            } catch (SQLException ignored) {}}
     }
 
     public static int getValueFromDB(String table, String columnName, String name) {
@@ -115,9 +116,7 @@ public class SQLConnect {
                 resultSet = statement.executeQuery("SELECT cost FROM " + table + " WHERE " + columnName + "='" + name+"';");
                 while (resultSet.next()) {
                     return resultSet.getInt("cost");
-                }}
-            catch (SQLException e) { result = e.getMessage();}
-        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
+                }} catch (SQLException ignored) { }}
         return 0;
     }
 
@@ -125,17 +124,8 @@ public class SQLConnect {
         if (statement != null) {
             try {
                 resultSet = statement.executeQuery("SELECT MAX(id) FROM Orders;");
-                result = "Номер последнего заказа - " + resultSet.getInt(1);
                 return resultSet.getInt(1);
-            }
-            catch (SQLException e) { result = "Ошибка с получением номера последнего заказа - " + e.getMessage();}
-        } else { System.out.println("Ошибка! Подключитесь к базе данных сперва!"); }
+            } catch (SQLException ignored) { }}
         return 0;
-    }
-
-    // Проверка на число
-    public static boolean isNumeric(String str) {
-        try { Double.parseDouble(str); return true; }
-        catch (NumberFormatException e) { return false; }
     }
 }

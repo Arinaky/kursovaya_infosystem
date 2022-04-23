@@ -27,6 +27,8 @@ public class CleanPrices {
         clean_services_prices.put("Чистка унитаза", SQLConnect.getValueFromDB("CleanServices", "clean_service", "Чистка унитаза"));
         clean_services_prices.put("Чистка раковин", SQLConnect.getValueFromDB("CleanServices", "clean_service", "Чистка раковин"));
         clean_services_prices.put("Уборка балкона", SQLConnect.getValueFromDB("CleanServices", "clean_service", "Уборка балкона"));
+
+        areaRatio = SQLConnect.getValueFromDB("CleanArea", "clean_area", "Площадь помещения");
     }
 
     public static void changeClean_type_price(String clean_type, int price) {
