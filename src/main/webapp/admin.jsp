@@ -14,7 +14,7 @@
 
 	    <div class="container">
 		    <div class="title">Цена за уборку одного квадратного метра площади помещения</div>
-		    <form action="${pageContext.request.contextPath}/Calc" method="post">
+		    <form action="${pageContext.request.contextPath}/ChangeCleanArea" method="post">
 			    <div class="user-details">
 				    <div class="input-box">
 					    <span class="details">Цена за уборку одного квадратного метра</span>
@@ -29,7 +29,7 @@
 
 		<div class="container">
 		    <div class="title">Цена за виды уборки</div>
-		    <form action="#">
+		    <form action="${pageContext.request.contextPath}/ChangeCleanType" method="post">
 			    <div class="user-details">
 				    <div class="input-box">
 					    <span class="details">Цена за генеральную уборку</span>
@@ -59,7 +59,7 @@
 
 	    <div class="container">
         		    <div class="title">Цена за дополнительные услуги</div>
-        		    <form action="#">
+        		    <form action="${pageContext.request.contextPath}/ChangeCleanType" method="post">
         			    <div class="user-details">
         				    <div class="input-box">
         					    <span class="details">Цена за услугу "Полировка полов"</span>
