@@ -112,7 +112,7 @@ public class SQLConnect {
 
     public static void changeDBValue(String table, String column, String columnName, String value) {
         if (connection != null) {
-            String sql = "UPDATE " + table + " SET cost = " + value + " WHERE " + column + " = " + columnName + ";";
+            String sql = "UPDATE " + table + " SET cost = " + value + " WHERE " + column + " = '" + columnName + "';";
             try {
                 statement.executeUpdate(sql);
             } catch (SQLException e) { result = e.getMessage();}}
