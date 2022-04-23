@@ -35,6 +35,7 @@ public class ChangeCleanArea extends HttpServlet {
                     request.setAttribute("clean_area", clean_area);
                     clean_area_try = Integer.parseInt(clean_area);
                     SQLConnect.changeDBValue("CleanArea", "clean_area", "Площадь помещения", String.valueOf(clean_area_try));
+                    request.setAttribute("result", SQLConnect.getResult());
                 } catch (NumberFormatException e) {
                     e.getMessage();
                 }

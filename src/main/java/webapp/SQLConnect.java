@@ -7,6 +7,12 @@ public class SQLConnect {
     public static Connection connection;
     public static Statement statement;
     public static ResultSet resultSet;
+
+    public static String getResult() {
+        return result;
+    }
+
+    public static String result;
     public static boolean connect = false;
 
     // Подключение к БД
@@ -106,7 +112,7 @@ public class SQLConnect {
             String sql = "UPDATE " + table + " SET cost = " + value + " WHERE " + column + " = " + columnName + ";";
             try {
                 statement.executeUpdate(sql);
-            } catch (SQLException ignored) {}}
+            } catch (SQLException e) { result = e.getMessage();}}
     }
 
     public static int getValueFromDB(String table, String columnName, String name) {

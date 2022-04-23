@@ -10,6 +10,7 @@
 	    <div class="container">
 	        <div class="title">Привет, админ</div>
 	        <div>Оставьте поле пустым, если не хотите менять цену</div>
+	        <div>Ошибка - ${result}</div>
 	    </div>
 
 	    <div class="container">
