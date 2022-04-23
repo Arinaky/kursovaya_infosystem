@@ -13,7 +13,7 @@
 	    </div>
 
 	    <div class="container">
-		    <div class="title">Цена за виды уборки</div>
+		    <div class="title">Цена за уборку одного квадратного метра площади помещения</div>
 		    <form action="#">
 			    <div class="user-details">
 				    <div class="input-box">
