@@ -37,7 +37,7 @@ public class SQLConnect {
             if (!statement.isClosed()) {
                 statement.close();
             }
-            if (!resultSet.isClosed()) {
+            if (!resultSet.isClosed() && resultSet != null) {
                 resultSet.close();
             }
         } catch (SQLException ignored) {}
