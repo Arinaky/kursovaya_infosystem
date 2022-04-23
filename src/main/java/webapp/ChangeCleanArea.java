@@ -13,6 +13,7 @@ public class ChangeCleanArea extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         RequestCleanArea CleanArea = RequestCleanArea.fromRequestParameters(request);
         CleanArea.setAsRequestAttributesAndCalculate(request, response);
+        request.getRequestDispatcher("/admin.jsp").forward(request, response);
     }
 
     private static class RequestCleanArea {
@@ -31,6 +32,7 @@ public class ChangeCleanArea extends HttpServlet {
             if (clean_area != null) {
                 int clean_area_try;
                 try {
+                    request.setAttribute("clean_area", clean_area);
                     clean_area_try = Integer.parseInt(clean_area);
                     SQLConnect.changeDBValue("CleanArea", "clean_area", "Площадь помещения", String.valueOf(clean_area_try));
                 } catch (NumberFormatException e) {

@@ -105,8 +105,7 @@ public class SQLConnect {
         if (connection != null) {
             String sql = "UPDATE " + table + " SET cost = " + value + " WHERE " + column + " = " + columnName + ";";
             try {
-                PreparedStatement statement = connection.prepareStatement(sql);
-                statement.executeUpdate();
+                statement.executeUpdate(sql);
             } catch (SQLException ignored) {}}
     }
 
