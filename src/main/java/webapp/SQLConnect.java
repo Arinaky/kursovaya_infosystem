@@ -87,7 +87,7 @@ public class SQLConnect {
                     " cost INTEGER)";
 
             statement.executeUpdate(SQL);
-        } catch (SQLException ignored) { }
+        } catch (SQLException e) { result = "1. " + e.getMessage(); }
     }
 
     public static void insertOrder(String surname, String name, String patronymic, String address, String date, String time, int clean_area, String clean_type, String clean_services, int price) {
@@ -107,7 +107,7 @@ public class SQLConnect {
                 statement.setString(9, clean_services);
                 statement.setInt(10, price);
                 statement.executeUpdate();
-            } catch (SQLException ignored) {}}
+            } catch (SQLException e) {result = "2. " + e.getMessage(); }}
     }
 
     public static void changeDBValue(String table, String column, String columnName, String value) {
@@ -115,7 +115,7 @@ public class SQLConnect {
             String sql = "UPDATE " + table + " SET cost = " + value + " WHERE " + column + " = '" + columnName + "';";
             try {
                 statement.executeUpdate(sql);
-            } catch (SQLException e) { result = e.getMessage();}}
+            } catch (SQLException e) { result = "3. " + e.getMessage(); }}
     }
 
     public static int getValueFromDB(String table, String columnName, String name) {
@@ -129,7 +129,7 @@ public class SQLConnect {
                         return resultSet.getInt("cost");
                     }
                 }
-                } catch (SQLException ignored) { }}
+                } catch (SQLException e) {result = "4. " + e.getMessage();  }}
         return 0;
     }
 
@@ -138,7 +138,7 @@ public class SQLConnect {
             try {
                 resultSet = statement.executeQuery("SELECT MAX(id) FROM Orders;");
                 return resultSet.getInt(1);
-            } catch (SQLException ignored) { }}
+            } catch (SQLException e) { result = "5. " + e.getMessage(); }}
         return 0;
     }
 }
