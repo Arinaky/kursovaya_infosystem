@@ -36,7 +36,6 @@
                     К оплате: ${price} руб.
                 		</p>
           			</div>
-                    %{result}
         			<div class="button">
                     <a href="index.jsp" class="header_link">Вернуться назад</a>
                     </div>
