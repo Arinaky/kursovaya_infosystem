@@ -42,25 +42,25 @@ public class ChangeCleanType extends HttpServlet {
             if (clean_type_1 != null) {
                 try {
                     clean_type_try = Integer.parseInt(clean_type_1);
-                    SQLConnect.changeDBValue("CleanType", "clean_type", "Генеральная", String.valueOf(clean_type_try));
+                    SQLConnect.changeDBValue("CleanTypes", "clean_type", "Генеральная", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {e.getMessage();}
             }
             if (clean_type_2 != null) {
                 try {
                     clean_type_try = Integer.parseInt(clean_type_2);
-                    SQLConnect.changeDBValue("CleanType", "clean_type", "Облегченная", String.valueOf(clean_type_try));
+                    SQLConnect.changeDBValue("CleanTypes", "clean_type", "Облегченная", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {e.getMessage();}
             }
             if (clean_type_3 != null) {
                 try {
                     clean_type_try = Integer.parseInt(clean_type_3);
-                    SQLConnect.changeDBValue("CleanType", "clean_type", "После ремонта", String.valueOf(clean_type_try));
+                    SQLConnect.changeDBValue("CleanTypes", "clean_type", "После ремонта", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {e.getMessage();}
             }
             if (clean_type_4 != null) {
                 try {
                     clean_type_try = Integer.parseInt(clean_type_4);
-                    SQLConnect.changeDBValue("CleanType", "clean_type", "Послестроительная", String.valueOf(clean_type_try));
+                    SQLConnect.changeDBValue("CleanTypes", "clean_type", "Послестроительная", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {e.getMessage();}
             }
             request.setAttribute("result", SQLConnect.getResult());
