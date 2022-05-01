@@ -8,24 +8,10 @@
 	</head>
 	<body>
     		<div class="container">
-    		<form action="#">
-    			<div class="order-numb">
-            <h1>DreamTeam</h1>
-            <p> Участники команды: </p>
-            </div>
-            <div class="user-details">
-            <p>
-
-                Юнусбаев Руслан Ильгизович <br>
-                Хизбуллина Ильзида Фанисовна <br>
-                Шиманов Кирил Андреевич <br>
-            </p>
-            </div>
-
-    			<div class="button">
-                <a href="index.jsp" class="header_link">Вернуться назад</a>
+    		<form action="${pageContext.request.contextPath}/welcome">
+                <div class="button">
+                    <input type="submit" value="Калькулятор клининговых услуг. Квартира">
                 </div>
-
     		</form>
     	</div>
 

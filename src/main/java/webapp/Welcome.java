@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-@WebServlet(name="Calc", urlPatterns="/Calc")
+@WebServlet(name="welcome", urlPatterns="/welcome")
 public class Welcome extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
