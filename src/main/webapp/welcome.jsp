@@ -8,7 +8,7 @@
 	</head>
 	<body>
     		<div class="container">
-    		<form action="${pageContext.request.contextPath}/welcome">
+    		<form action="${pageContext.request.contextPath}/welcome" method="post">
                 <div class="button">
                     <input type="submit" value="Калькулятор клининговых услуг. Квартира">
                 </div>

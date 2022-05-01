@@ -13,6 +13,7 @@ public class ChangeCleanType extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         RequestCleanType CleanType = RequestCleanType.fromRequestParameters(request);
         CleanType.setAsRequestAttributesAndCalculate(request, response);
+        request.getRequestDispatcher("/admin.jsp").forward(request, response);
     }
 
     private static class RequestCleanType {
@@ -62,6 +63,7 @@ public class ChangeCleanType extends HttpServlet {
                     SQLConnect.changeDBValue("CleanType", "clean_type", "Послестроительная", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {e.getMessage();}
             }
+            request.setAttribute("result", SQLConnect.getResult());
         }
     }
 }
