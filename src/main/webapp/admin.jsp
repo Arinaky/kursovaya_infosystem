@@ -19,7 +19,7 @@
 			    <div class="user-details">
 				    <div class="input-box">
 					    <span class="details">Цена за уборку одного квадратного метра</span>
-					    <input type="text" placeholder="Введите коэффициент" required name="clean_area">
+					    <input type="text" placeholder="Введите коэффициент"  name="clean_area">
 				    </div>
 			    </div>
 			    <div class="button">
@@ -34,22 +34,22 @@
 			    <div class="user-details">
 				    <div class="input-box">
 					    <span class="details">Цена за генеральную уборку</span>
-					    <input type="text" placeholder="Введите коэффициент" required name="clean_type_1">
+					    <input type="text" placeholder="Введите коэффициент"  name="clean_type_1">
 				    </div>
 
     				<div class="input-box">
 	    				<span class="details">Цена за облегченную уборку</span>
-		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type_2">
+		    			<input type="text" placeholder="Введите коэффициент"  name="clean_type_2">
 			    	</div>
 
     				<div class="input-box">
 	    				<span class="details">Цена за уборку после ремонта</span>
-		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type_3">
+		    			<input type="text" placeholder="Введите коэффициент"  name="clean_type_3">
 			    	</div>
 
     				<div class="input-box">
 	    				<span class="details">Цена за послестроительную уборку</span>
-		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type_4">
+		    			<input type="text" placeholder="Введите коэффициент"  name="clean_type_4">
 			    	</div>
 			    </div>
 			    <div class="button">
@@ -60,46 +60,46 @@
 
 	    <div class="container">
         		    <div class="title">Цена за дополнительные услуги</div>
-        		    <form action="${pageContext.request.contextPath}/ChangeCleanType" method="post">
+        		    <form action="${pageContext.request.contextPath}/ChangeCleanService" method="post">
         			    <div class="user-details">
         				    <div class="input-box">
         					    <span class="details">Цена за услугу "Полировка полов"</span>
-        					    <input type="text" placeholder="Введите коэффициент" required name="clean_service_1">
+        					    <input type="text" placeholder="Введите коэффициент"  name="clean_service_1">
         				    </div>
 
             				<div class="input-box">
         	    				<span class="details">Цена за услугу "Мытье посуды"</span>
-        		    			<input type="text" placeholder="Введите коэффициент" required name="clean_service_2">
+        		    			<input type="text" placeholder="Введите коэффициент"  name="clean_service_2">
         			    	</div>
 
             				<div class="input-box">
         	    				<span class="details">Цена за услугу "Стирка+глажка"</span>
-        		    			<input type="text" placeholder="Введите коэффициент" required name="clean_service_3">
+        		    			<input type="text" placeholder="Введите коэффициент"  name="clean_service_3">
         			    	</div>
 
             				<div class="input-box">
         	    				<span class="details">Цена за услугу "Мытье окон"</span>
-        		    			<input type="text" placeholder="Введите коэффициент" required name="clean_service_4">
+        		    			<input type="text" placeholder="Введите коэффициент"  name="clean_service_4">
         			    	</div>
 
         			    	<div class="input-box">
         					    <span class="details">Цена за услугу "Уборка стен"</span>
-        					    <input type="text" placeholder="Введите коэффициент" required name="clean_service_5">
+        					    <input type="text" placeholder="Введите коэффициент"  name="clean_service_5">
         				    </div>
 
             				<div class="input-box">
         	    				<span class="details">Цена за услугу "Чистка унитаза"</span>
-        		    			<input type="text" placeholder="Введите коэффициент" required name="clean_service_6">
+        		    			<input type="text" placeholder="Введите коэффициент"  name="clean_service_6">
         			    	</div>
 
             				<div class="input-box">
         	    				<span class="details">Цена за услугу "Чистка раковин"</span>
-        		    			<input type="text" placeholder="Введите коэффициент" required name="clean_service_7">
+        		    			<input type="text" placeholder="Введите коэффициент"  name="clean_service_7">
         			    	</div>
 
             				<div class="input-box">
         	    				<span class="details">Цена за услугу "Уборка балкона"</span>
-        		    			<input type="text" placeholder="Введите коэффициент" required name="clean_service_8">
+        		    			<input type="text" placeholder="Введите коэффициент"  name="clean_service_8">
         			    	</div>
         			    </div>
         			    <div class="button">
