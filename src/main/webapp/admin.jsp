@@ -34,22 +34,22 @@
 			    <div class="user-details">
 				    <div class="input-box">
 					    <span class="details">Цена за генеральную уборку</span>
-					    <input type="text" placeholder="Введите коэффициент" required name="clean_type1">
+					    <input type="text" placeholder="Введите коэффициент" required name="clean_type_1">
 				    </div>
 
     				<div class="input-box">
 	    				<span class="details">Цена за облегченную уборку</span>
-		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type2">
+		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type_2">
 			    	</div>
 
     				<div class="input-box">
 	    				<span class="details">Цена за уборку после ремонта</span>
-		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type3">
+		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type_3">
 			    	</div>
 
     				<div class="input-box">
 	    				<span class="details">Цена за послестроительную уборку</span>
-		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type4">
+		    			<input type="text" placeholder="Введите коэффициент" required name="clean_type_4">
 			    	</div>
 			    </div>
 			    <div class="button">
