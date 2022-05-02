@@ -29,7 +29,7 @@ public class ChangeCleanArea extends HttpServlet {
         }
 
         public void setAsRequestAttributesAndCalculate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            if (clean_area != null) {
+            if (clean_area != "") {
                 int clean_area_try;
                 try {
                     request.setAttribute("clean_area", clean_area);

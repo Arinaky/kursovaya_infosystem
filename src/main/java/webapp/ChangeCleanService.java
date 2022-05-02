@@ -52,49 +52,49 @@ public class ChangeCleanService extends HttpServlet {
         public void setAsRequestAttributesAndCalculate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             int clean_type_try;
             String result = null;
-            if (clean_service_1 != null) {
+            if (clean_service_1 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_service_1);
                     SQLConnect.changeDBValue("CleanServices", "clean_service", "Полировка полов", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_service_2 != null) {
+            if (clean_service_2 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_service_2);
                     SQLConnect.changeDBValue("CleanServices", "clean_service", "Мытье посуды", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_service_3 != null) {
+            if (clean_service_3 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_service_3);
                     SQLConnect.changeDBValue("CleanServices", "clean_service", "Стирка+глажка", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_service_4 != null) {
+            if (clean_service_4 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_service_4);
                     SQLConnect.changeDBValue("CleanServices", "clean_service", "Мытье окон", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_service_5 != null) {
+            if (clean_service_5 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_service_5);
                     SQLConnect.changeDBValue("CleanServices", "clean_service", "Уборка стен", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_service_6 != null) {
+            if (clean_service_6 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_service_6);
                     SQLConnect.changeDBValue("CleanServices", "clean_service", "Чистка унитаза", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_service_7 != null) {
+            if (clean_service_7 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_service_7);
                     SQLConnect.changeDBValue("CleanServices", "clean_service", "Чистка раковин", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_service_8 != null) {
+            if (clean_service_8 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_service_8);
                     SQLConnect.changeDBValue("CleanServices", "clean_service", "Уборка балкона", String.valueOf(clean_type_try));

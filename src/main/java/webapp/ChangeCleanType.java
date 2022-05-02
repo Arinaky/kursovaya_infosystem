@@ -40,25 +40,25 @@ public class ChangeCleanType extends HttpServlet {
         public void setAsRequestAttributesAndCalculate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             int clean_type_try;
             String result = null;
-            if (clean_type_1 != null) {
+            if (clean_type_1 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_type_1);
                     SQLConnect.changeDBValue("CleanTypes", "clean_type", "Генеральная", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_type_2 != null) {
+            if (clean_type_2 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_type_2);
                     SQLConnect.changeDBValue("CleanTypes", "clean_type", "Облегченная", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_type_3 != null) {
+            if (clean_type_3 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_type_3);
                     SQLConnect.changeDBValue("CleanTypes", "clean_type", "После ремонта", String.valueOf(clean_type_try));
                 } catch (NumberFormatException e) {result = e.getMessage();}
             }
-            if (clean_type_4 != null) {
+            if (clean_type_4 != "") {
                 try {
                     clean_type_try = Integer.parseInt(clean_type_4);
                     SQLConnect.changeDBValue("CleanTypes", "clean_type", "Послестроительная", String.valueOf(clean_type_try));
