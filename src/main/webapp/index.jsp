@@ -53,7 +53,7 @@
 				    </div>
 				    <div class="input-box">
                         <span class="details">Площадь помещения</span>
-                    	<input type="text" required name="clean_area" id="clean_area" value="${clean_area}">
+                    	<input type="number" required name="clean_area" id="clean_area" value="${clean_area}">
                     </div>
 			    </div>
 

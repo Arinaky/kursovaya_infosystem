@@ -13,7 +13,13 @@
                     <input type="submit" value="Калькулятор клининговых услуг. Квартира">
                 </div>
     		</form>
+    		<div class="container">
+    		<form action="${pageContext.request.contextPath}/test" method="post">
+                <div class="button">
+                    <input type="submit" value="Тест">
+                </div>
+    		</form>
     	</div>
-
+        <script src="message.js"></script>
     	</body>
 	</html>

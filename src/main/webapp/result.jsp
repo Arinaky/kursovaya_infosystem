@@ -16,7 +16,6 @@
                 </div>
                 <div class="user-details">
                 <p>
-
                     Фамилия: ${surname} <br>
                     Имя: ${name} <br>
                     Отчество: ${patronymic} <br>
@@ -28,9 +27,7 @@
                     <br>
                     ${clean_services}
                 </p>
-
         			</div>
-
         			<div class="result">
         				 <p>
                     К оплате: ${price} руб.
@@ -39,13 +36,10 @@
         			<div class="button">
                     <a href="index.jsp" class="header_link">Вернуться назад</a>
                     </div>
-                ${result}
         		</form>
-
         		<div class="button">
         		    <a href="/WebApp/Check.pdf">Открыть PDF</a>
         		</div>
-
                 <div class="button">
         		    <a href="/WebApp/Check.pdf" download>Скачать PDF</a>
         		</div>
