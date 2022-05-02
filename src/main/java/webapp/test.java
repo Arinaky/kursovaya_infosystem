@@ -24,15 +24,7 @@ public class test extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		RequestWelcome welcome = RequestWelcome.fromRequestParameters(request);
         welcome.setAsRequestAttributesAndCalculate(request);
-		ScriptEngine engine = new ScriptEngineManager().getEngineByName("javascript");
-		try {
-			FileReader fr = new FileReader(String.valueOf(Paths.get(getClass().getResource("/js/message.js").toURI())));
-			engine.eval(fr);
-		} catch (ScriptException e) {
-			throw new RuntimeException(e);
-		} catch (URISyntaxException e) {
-			throw new RuntimeException(e);
-		}
+		response.getWriter().write("hello");
 		request.getRequestDispatcher("/welcome.jsp").forward(request, response);
 	}
     	private static class RequestWelcome {
