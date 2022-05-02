@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -27,7 +28,8 @@ public class test extends HttpServlet {
 		ScriptEngineManager manager = new ScriptEngineManager();
 		ScriptEngine engine = manager.getEngineByName("JavaScript");
 		try {
-			engine.eval(Files.newBufferedReader(Paths.get(getClass().getResource("js/message.js").toURI()), StandardCharsets.UTF_8));
+			URL fileUrl = getClass().getResource("/js/message.js");
+			engine.eval(Files.newBufferedReader(Paths.get(fileUrl.toURI()),StandardCharsets.UTF_8));
 			Invocable inv = (Invocable) engine;
 			inv.invokeFunction("message");
 		} catch (ScriptException e) {
