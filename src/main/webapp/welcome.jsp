@@ -20,6 +20,13 @@
                 </div>
     		</form>
     	</div>
-    	<script type="text/javascript" src="message.js"></script>
+    	<script type="text/javascript">
+    	    var send = ${message}
+    	    if (send === true){
+    	        var msg = "Hello World";
+                alert(msg);
+                send = false;
+    	    }
+    	</script>
     	</body>
 	</html>
