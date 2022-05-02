@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
 import java.io.IOException;
 
 @WebServlet(name="test", urlPatterns="/test")
@@ -14,7 +15,9 @@ public class test extends HttpServlet {
 		RequestWelcome welcome = RequestWelcome.fromRequestParameters(request);
         welcome.setAsRequestAttributesAndCalculate(request);
 		String message = (String)request.getAttribute("alertMsg");
+		JOptionPane.showMessageDialog(null, "hello");
 		request.getRequestDispatcher("/welcome.jsp").forward(request, response);
+		JOptionPane.showMessageDialog(null, "world");
 	}
     	private static class RequestWelcome {
 		public RequestWelcome() {}
