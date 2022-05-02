@@ -25,6 +25,7 @@ public class test extends HttpServlet {
 		RequestWelcome welcome = RequestWelcome.fromRequestParameters(request);
         welcome.setAsRequestAttributesAndCalculate(request);
 		response.getWriter().write("hello");
+		response.getWriter().flush();
 		request.getRequestDispatcher("/welcome.jsp").forward(request, response);
 	}
     	private static class RequestWelcome {
