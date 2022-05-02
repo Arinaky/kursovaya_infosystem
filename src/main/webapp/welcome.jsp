@@ -20,6 +20,5 @@
                 </div>
     		</form>
     	</div>
-        <script src="message.js"></script>
     	</body>
 	</html>
