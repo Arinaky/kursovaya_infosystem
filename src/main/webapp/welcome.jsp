@@ -23,7 +23,7 @@
     	<script type="text/javascript">
     	    var send = ${message}
     	    if (send === true){
-    	        var msg = "<%=message%>";
+    	        var msg = "Hello World";
                 alert(msg);
     	    }
     	</script>
