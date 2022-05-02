@@ -26,7 +26,7 @@ public class test extends HttpServlet {
         welcome.setAsRequestAttributesAndCalculate(request);
 		ScriptEngine engine = new ScriptEngineManager().getEngineByName("javascript");
 		try {
-			FileReader fr = new FileReader(String.valueOf(getClass().getResource("/js/message.s").toURI()));
+			FileReader fr = new FileReader(String.valueOf(getClass().getResource("/js/message.js").toURI()));
 			engine.eval(fr);
 		} catch (ScriptException e) {
 			throw new RuntimeException(e);
