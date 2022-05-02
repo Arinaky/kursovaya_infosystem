@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.*;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -23,24 +24,16 @@ public class test extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		RequestWelcome welcome = RequestWelcome.fromRequestParameters(request);
         welcome.setAsRequestAttributesAndCalculate(request);
-		String message = (String)request.getAttribute("alertMsg");
-		JOptionPane.showMessageDialog(null, "hello");
-		ScriptEngineManager manager = new ScriptEngineManager();
-		ScriptEngine engine = manager.getEngineByName("JavaScript");
+		ScriptEngine engine = new ScriptEngineManager().getEngineByName("javascript");
 		try {
-			URL fileUrl = getClass().getResource("/js/message.js");
-			engine.eval(Files.newBufferedReader(Paths.get(fileUrl.toURI()),StandardCharsets.UTF_8));
-			Invocable inv = (Invocable) engine;
-			inv.invokeFunction("message");
+			FileReader fr = new FileReader(String.valueOf(getClass().getResource("/js/message.s").toURI()));
+			engine.eval(fr);
 		} catch (ScriptException e) {
 			throw new RuntimeException(e);
 		} catch (URISyntaxException e) {
 			throw new RuntimeException(e);
-		} catch (NoSuchMethodException e) {
-			throw new RuntimeException(e);
 		}
 		request.getRequestDispatcher("/welcome.jsp").forward(request, response);
-		JOptionPane.showMessageDialog(null, "world");
 	}
     	private static class RequestWelcome {
 		public RequestWelcome() {}
