@@ -13,8 +13,8 @@ public class test extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		RequestWelcome welcome = RequestWelcome.fromRequestParameters(request);
         welcome.setAsRequestAttributesAndCalculate(request);
-
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		String message = (String)request.getAttribute("alertMsg");
+		request.getRequestDispatcher("/welcome.jsp").forward(request, response);
 	}
     	private static class RequestWelcome {
 		public RequestWelcome() {}
@@ -24,8 +24,7 @@ public class test extends HttpServlet {
 		}
 
 		public void setAsRequestAttributesAndCalculate(HttpServletRequest request) {
-            SQLConnect.Connect();
-            SQLConnect.CreateDB();
+
 		}
 	}
 }
