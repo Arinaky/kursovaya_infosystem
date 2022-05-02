@@ -21,7 +21,8 @@
     		</form>
     	</div>
     	<script type="text/javascript">
-    	    if (${message} === true){
+    	    var send = ${message}
+    	    if (send === true){
     	        var msg = "<%=message%>";
                 alert(msg);
     	    }
