@@ -15,8 +15,19 @@ import java.util.Objects;
 
 import static org.junit.Assert.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CreatePDFTest.
+ * @author Shimanov K.A.
+ */
 public class CreatePDFTest {
 
+    /**
+     * Creates the.
+     *
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws DocumentException the document exception
+     */
     @Test
     public void create() throws IOException, DocumentException {
         HashSet<String> services = new HashSet<>();
@@ -29,14 +40,35 @@ public class CreatePDFTest {
         assertNotEquals(firstPath, getPdfPath());
     }
 
+    /**
+     * Gets the pdf path.
+     *
+     * @return the pdf path
+     */
     public static String getPdfPath() {
         return pdfPath;
     }
 
+    /** The pdf path. */
     public static String pdfPath;
 
+    /** The times. */
     private BaseFont times = null;
 
+    /**
+     * Creates the.
+     *
+     * @param fullName the full name
+     * @param time_calc the time calc
+     * @param date_calc the date calc
+     * @param address_calc the address calc
+     * @param clean_type_calc the clean type calc
+     * @param clean_area_calc the clean area calc
+     * @param price the price
+     * @param clean_services the clean services
+     * @throws IOException Signals that an I/O exception has occurred.
+     * @throws DocumentException the document exception
+     */
     public void Create(String fullName, String time_calc, String date_calc, String address_calc, String clean_type_calc, String clean_area_calc, int price, HashSet<String> clean_services) throws IOException, DocumentException {
 
         Document document = new Document();

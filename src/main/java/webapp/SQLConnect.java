@@ -2,19 +2,40 @@ package webapp;
 
 import java.sql.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SQLConnect.
+ * @author Yunusbaev R.I.
+ */
 public class SQLConnect {
 
+    /** The connection. */
     public static Connection connection;
+    
+    /** The statement. */
     public static Statement statement;
+    
+    /** The result set. */
     public static ResultSet resultSet;
 
+    /**
+     * Gets the result.
+     *
+     * @return the result
+     */
     public static String getResult() {
         return result;
     }
 
+    /** The result. */
     public static String result;
+    
+    /** The connect. */
     public static boolean connect = false;
 
+    /**
+     * Connect.
+     */
     // Подключение к БД
     public static void Connect() {
         if (connect == false) {
@@ -29,6 +50,9 @@ public class SQLConnect {
         }
     }
 
+    /**
+     * Close.
+     */
     public static void Close() {
         try {
             if (!connection.isClosed()) {
@@ -40,6 +64,9 @@ public class SQLConnect {
         } catch (SQLException ignored) {}
     }
 
+    /**
+     * Creates the DB.
+     */
     // Создание таблицы в БД
     public static void CreateDB() {
         try {
@@ -90,6 +117,20 @@ public class SQLConnect {
         } catch (SQLException e) { result = "1. " + e.getMessage(); }
     }
 
+    /**
+     * Insert order.
+     *
+     * @param surname the surname
+     * @param name the name
+     * @param patronymic the patronymic
+     * @param address the address
+     * @param date the date
+     * @param time the time
+     * @param clean_area the clean area
+     * @param clean_type the clean type
+     * @param clean_services the clean services
+     * @param price the price
+     */
     public static void insertOrder(String surname, String name, String patronymic, String address, String date, String time, int clean_area, String clean_type, String clean_services, int price) {
         if (connection != null) {
             String sql = "INSERT INTO Orders(surname, name, patronymic,address,date,time,clean_area,clean_type,clean_services,price) VALUES(?,?,?,?,?,?,?,?,?,?)";
@@ -110,6 +151,14 @@ public class SQLConnect {
             } catch (SQLException e) {result = "2. " + e.getMessage(); }}
     }
 
+    /**
+     * Change DB value.
+     *
+     * @param table the table
+     * @param column the column
+     * @param columnName the column name
+     * @param value the value
+     */
     public static void changeDBValue(String table, String column, String columnName, String value) {
         if (connection != null) {
             String sql = "UPDATE " + table + " SET cost = " + value + " WHERE " + column + " = '" + columnName + "';";
@@ -118,6 +167,14 @@ public class SQLConnect {
             } catch (SQLException e) { result = "3. " + e.getMessage(); }}
     }
 
+    /**
+     * Gets the value from DB.
+     *
+     * @param table the table
+     * @param columnName the column name
+     * @param name the name
+     * @return the value from DB
+     */
     public static int getValueFromDB(String table, String columnName, String name) {
         if (statement != null) {
             try {
@@ -133,6 +190,11 @@ public class SQLConnect {
         return 0;
     }
 
+    /**
+     * Gets the last order.
+     *
+     * @return the last order
+     */
     public static int getLastOrder() {
         if (statement != null) {
             try {

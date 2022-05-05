@@ -14,16 +14,41 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CreatePDF.
+ * @author Shimanov K.A.
+ */
 public class CreatePDF {
 	
+	/** The times. */
 	private BaseFont times = null;
 
+	/**
+	 * Gets the pdf path.
+	 *
+	 * @return the pdf path
+	 */
 	public static String getPdfPath() {
 		return pdfPath;
 	}
 
+	/** The pdf path. */
 	public static String pdfPath;
 
+    /**
+     * Creates the.
+     *
+     * @param fullName the full name
+     * @param time_calc the time calc
+     * @param date_calc the date calc
+     * @param address_calc the address calc
+     * @param clean_type_calc the clean type calc
+     * @param clean_area_calc the clean area calc
+     * @param price the price
+     * @param clean_services the clean services
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     public void Create(String fullName, String time_calc, String date_calc, String address_calc, String clean_type_calc, String clean_area_calc, int price, HashSet<String> clean_services) throws IOException {
       	
     	Document document = new Document();
@@ -110,11 +135,23 @@ public class CreatePDF {
     }
     
 
+	/**
+	 * Adds the rows.
+	 *
+	 * @param table the table
+	 * @param cell1 the cell 1
+	 * @param cell2 the cell 2
+	 */
 	private void addRows(PdfPTable table, String cell1, String cell2) {
 		table.addCell((new Phrase(cell1, new Font(times,14))));
 	    table.addCell((new Phrase(cell2, new Font(times,14))));
 	}
 
+	/**
+	 * Adds the header.
+	 *
+	 * @param table the table
+	 */
 	private void addHeader(PdfPTable table) {
 		Stream.of("Дополнительные услуги", "Цена").forEach(columnTitle -> {
         	PdfPCell header = new PdfPCell();
