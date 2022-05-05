@@ -1,5 +1,11 @@
 package webapp;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,12 +13,6 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.stream.Stream;
-
-import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.BaseFont;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
 
 public class CreatePDF {
 	
@@ -36,7 +36,7 @@ public class CreatePDF {
 		for(int i=0;i<(lengthpath-1);i++) {
 			abspath.append(parsfilepath[i]).append("/");
 		}
-		filepath=abspath + "webapps/WebApp/Check.pdf";
+		filepath=abspath + "/Check.pdf";
 		pdfPath = filepath;
 		String imagepath= Objects.requireNonNull(CreatePDF.class.getResource("/img/logo.png")).getPath();
 		String fontpath = Objects.requireNonNull(CreatePDF.class.getResource("/fonts/times.ttf")).getPath();

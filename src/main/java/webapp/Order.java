@@ -48,6 +48,7 @@ public class Order {
         clean_services.add(clean_service_7_calc);
         clean_services.add(clean_service_8_calc);
         clean_services.remove(null);
+        clean_services.remove("");
     }
 
     public void Calculate() {
